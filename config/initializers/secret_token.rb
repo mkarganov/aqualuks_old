@@ -9,4 +9,16 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Octopus::Application.config.secret_key_base = '755bcdef013846a34273610b3174be4bbf2fe9a89b73aae32a71e742cf0f001c75704e524407899faef7eae51baa341be6a9d8effa57838be27fbedfddb1fd18'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    File.read(token_file).chomp
+  else
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+Octopus::Application.config.secret_key_base = secure_token

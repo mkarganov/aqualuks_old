@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+.basic_image {
+  position: absolute;
+  top: 15%;
+  left: 25%;
+}

@@ -13,6 +13,7 @@ gem 'simple_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -33,7 +34,7 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
-  gem 'sqlite3'
+  gem 'mysql2'
   gem 'quiet_assets'
   gem 'pry'
   gem 'rspec-rails'

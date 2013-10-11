@@ -1,0 +1,6 @@
+.form-horizontal=simple_form_for @product, url: admin_products_path do |f|
+  =f.input :name
+  =f.input :description
+  =f.input :price
+  =f.button :submit
+

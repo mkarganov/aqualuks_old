@@ -1,9 +1,11 @@
 Octopus::Application.routes.draw do
   get "welcome/index"
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  # You can have the root of your site routed with "root"
+  namespace :admin do
+    get :dashboard, to: 'dashboards#index'
+    resources :products
+  end
+
   root 'welcome#index'
 
   # Example of regular route:

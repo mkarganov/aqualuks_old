@@ -1,15 +1,19 @@
 h1 Products
-table
-  th
-    td Name
-    td Description
-    td Price
-  - @products.each do |product|
+table.table.table-bordered.table-stripped.table-hover
+  thead
     tr
-      td=product.name
-      td=product.description
-      td=product.price
-      td=link_to "Edit", edit_admin_product_path(product)
-      td=link_to "Delete", admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' }
+      td="Name"
+      td="Description"
+      td="Price"
+      td="Actions"
+  tbody
+    - @products.each do |product|
+      tr
+        td=product.name
+        td=product.description
+        td=product.price
+        td.row
+          .col-md-6=link_to "Edit", edit_admin_product_path(product)
+          .col-md-6=link_to "Delete", admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' }
 
 =link_to 'Add new product', new_admin_product_path

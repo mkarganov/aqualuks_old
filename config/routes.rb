@@ -4,6 +4,7 @@ Octopus::Application.routes.draw do
   namespace :admin do
     get :dashboard, to: 'dashboards#index'
     resources :products
+    resources :categories
   end
 
   root 'welcome#index'

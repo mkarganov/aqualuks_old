@@ -1,0 +1,13 @@
+h1 Categories
+- @categories.each do |category|
+  table
+    thead
+      td="Category name"
+      td="Action"
+    tbody
+      th
+        td=category.title
+        td
+          p=link_to "Edit", edit_admin_category_path(category)
+          p=link_to "Delete", admin_category_path(category), method: :delete, data: { confirm: "Are you sure?" }
+= link_to 'Add new category', new_admin_category_path

@@ -10,7 +10,7 @@ table.table.table-bordered.table-stripped.table-hover.table-responsive
   tbody
     - @products.each do |product|
       tr
-        td=image_tag img=product.product_images.first.image_url(:thumb).to_s unless product.product_images.empty?
+        td=image_tag product.product_images.first.image_url(:thumb).to_s unless product.product_images.empty?
         td=product.name
         td=product.description
         td=product.price

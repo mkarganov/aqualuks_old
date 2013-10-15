@@ -1,5 +1,6 @@
 class Admin::CategoriesController < AdminApplicationController
 
+  before_filter :find_category, only: [:edit, :update, :destroy]
   def index
     @categories = Category.all
   end
@@ -13,13 +14,7 @@ class Admin::CategoriesController < AdminApplicationController
     redirect_to admin_categories_path
   end
 
-  def edit
-    @category  = Category.find(params[:id])
-  end
-
   def update
-    @category = Category.find(params[:id])
-
     if @category.update(category_params)
       redirect_to admin_categories_path
     else
@@ -28,7 +23,6 @@ class Admin::CategoriesController < AdminApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
     @category.delete
 
     redirect_to admin_categories_path

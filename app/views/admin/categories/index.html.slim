@@ -1,13 +1,14 @@
 h1 Categories
-- @categories.each do |category|
-  table
-    thead
+table.table.table-bordered.table-stripped.table-responsive
+  thead
+    tr
       td="Category name"
       td="Action"
-    tbody
-      th
+  tbody
+    - @categories.each do |category|
+      tr
         td=category.title
-        td
-          p=link_to "Edit", edit_admin_category_path(category)
-          p=link_to "Delete", admin_category_path(category), method: :delete, data: { confirm: "Are you sure?" }
+        td.row
+          .col-md-6=link_to "Edit", edit_admin_category_path(category)
+          .col-md-6=link_to "Delete", admin_category_path(category), method: :delete, data: { confirm: "Are you sure?" }
 = link_to 'Add new category', new_admin_category_path

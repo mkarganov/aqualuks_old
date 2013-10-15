@@ -29,7 +29,7 @@ class Admin::ProductsController < AdminApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    @product.delete
+    @product.destroy
 
     redirect_to admin_products_path
   end
@@ -37,6 +37,10 @@ class Admin::ProductsController < AdminApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, category_ids: [])
+    params.require(:product).permit(:name, :description, :price, product_images_attributes: [:image], category_ids: [])
+  end
+
+  def find_product
+    @category  = Product.find(params[:id])
   end
 end

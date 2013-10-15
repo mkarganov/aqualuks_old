@@ -1,7 +1,8 @@
 h1 Products
-table.table.table-bordered.table-stripped.table-hover
+table.table.table-bordered.table-stripped.table-hover.table-responsive
   thead
     tr
+      td="Image"
       td="Name"
       td="Description"
       td="Price"
@@ -9,6 +10,7 @@ table.table.table-bordered.table-stripped.table-hover
   tbody
     - @products.each do |product|
       tr
+        td=image_tag img=product.product_images.first.image_url(:thumb).to_s unless product.product_images.empty?
         td=product.name
         td=product.description
         td=product.price

@@ -1,7 +1,7 @@
 = f.simple_fields_for :product_images, image do |field|
-  li
-    .row
-      .span2= image_tag image.image_url(:thumb).to_s
-      .span2= field.file_field :image
-      .span2#remove= link_to 'Remove', '#'
+  li.control-group
+    .row-fluid
+      = field.input :image, as: :file, wrapper_html: { class: :span4 }
+      .span4= image_tag image.image_url(:thumb).to_s
+      .span4#remove= link_to 'Remove', '#'
       .destroy_field= field.hidden_field :_destroy, value: false

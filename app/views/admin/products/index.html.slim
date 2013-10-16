@@ -1,12 +1,12 @@
-h1 Products
+h1= t('.main_title')
 table.table.table-bordered.table-stripped.table-hover.table-responsive
   thead
     tr
-      td="Image"
-      td="Name"
-      td="Description"
-      td="Price"
-      td="Actions"
+      td=('.image')
+      td=t('.name')
+      td=t('.description')
+      td=t('.price')
+      td=t('.actions')
   tbody
     - @products.each do |product|
       tr
@@ -14,8 +14,8 @@ table.table.table-bordered.table-stripped.table-hover.table-responsive
         td=product.name
         td=product.description
         td=product.price
-        td.row
-          .col-md-6=link_to "Edit", edit_admin_product_path(product)
-          .col-md-6=link_to "Delete", admin_product_path(product), method: :delete, data: { confirm: 'Are you sure?' }
+        td
+          =link_to "Edit ", edit_admin_product_path(product)
+          =link_to "Delete", admin_product_path(product), method: :delete, data: { confirm: t('helpers.links.confirm')}
 
-=link_to 'Add new product', new_admin_product_path
+=link_to t('.add_new_product'), new_admin_product_path

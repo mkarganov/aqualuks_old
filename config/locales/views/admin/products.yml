@@ -1,0 +1,10 @@
+en:
+  admin:
+    products:
+      index:
+        main_title: Products
+        add_new_product: Add new product
+        price: Price
+        description: Description
+        name: Product Name
+        actions: Actions

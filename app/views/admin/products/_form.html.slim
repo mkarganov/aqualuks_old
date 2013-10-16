@@ -1,16 +1,16 @@
 .form-horizontal=simple_form_for [:admin, @product] do |f|
   .row
-    .span6
+    .span8
       = f.input :name
       = f.input :description
       = f.input :price
-      ul#product_images_items
-        = render partial: 'images', collection: @product.product_images, as: :image, locals: { f: f }
+      ul.unstyled#product_images
+        = render partial: 'image', collection: @product.product_images, locals: { f: f }
       = content_for :product_images do
-        = render partial: 'images', locals: { f: f, image: @product.product_images.build }
-      #add_image=link_to 'Add Image', "#"
-    .span6
+        = render partial: 'image', locals: { f: f, image: @product.product_images.build }
+      #add_image=link_to 'Add Image', '#'
+    .span4
       = f.association :categories, as: :check_boxes
   .pull-right= f.button :submit
-#product_images= yield :product_images
+#product_images_form.hide= yield :product_images
 

@@ -1,5 +1,0 @@
-= f.simple_fields_for :product_images, image do |field|
-  li
-    .row
-      .span3= image_tag image.image_url(:thumb).to_s
-      .span3= field.file_field :image

@@ -1,9 +1,1 @@
-.form-horizontal=simple_form_for @product, url: admin_products_path do |f|
-  =f.input :name
-  =f.input :description
-  =f.input :price
-  =f.simple_fields_for :product_images, @product.product_images.build do |img|
-    =img.file_field :image
-  =f.association :categories, as: :check_boxes
-  =f.button :submit
-
+= render 'form'

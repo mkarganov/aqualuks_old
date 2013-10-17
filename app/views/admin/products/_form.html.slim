@@ -1,4 +1,4 @@
-.form-inline=simple_form_for [:admin, @product] do |f|
+.form=simple_form_for [:admin, @product] do |f|
   .row
     .span8
       = f.input :name, label: t('.name')
@@ -10,7 +10,7 @@
         = render partial: 'image', locals: { f: f, image: @product.product_images.build }
       #add_image=link_to t('.add_image'), '#'
     .span4
-      = f.association :categories, as: :check_boxes, label: t('.categories')
+      = f.association :categories, as: :check_boxes, label: t('.categories'), wrapper_html: { class: 'display-block'}
   .pull-right= f.button :submit, label: ('.create_product')
 #product_images_form.hide= yield :product_images
 

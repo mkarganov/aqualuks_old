@@ -1,14 +1,14 @@
-h1 Categories
+h1= t('.manage_categories')
 table.table.table-bordered.table-stripped.table-responsive
   thead
     tr
-      td="Category name"
-      td="Action"
+      td=t('.category_name')
+      td=t('.actions')
   tbody
     - @categories.each do |category|
       tr
         td=category.title
-        td.row
-          .col-md-6=link_to "Edit", edit_admin_category_path(category)
-          .col-md-6=link_to "Delete", admin_category_path(category), method: :delete, data: { confirm: "Are you sure?" }
-= link_to 'Add new category', new_admin_category_path
+        td
+          =link_to "#{t('helpers.links.edit') + ' '}", edit_admin_category_path(category)
+          =link_to t('helpers.links.destroy'), admin_category_path(category), method: :delete, data: { confirm: t('helpers.links.confirm') }
+= link_to t('.add_new_category'), new_admin_category_path

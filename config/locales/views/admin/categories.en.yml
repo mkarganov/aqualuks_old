@@ -1,0 +1,11 @@
+en:
+  admin:
+    categories:
+      index:
+        manage_categories: Manage Categories
+        add_new_category: Add New Category
+        category_name: Category Name
+        actions: Actions
+      form:
+        category_title: Category Title
+        create_category: Create Category

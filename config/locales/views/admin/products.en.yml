@@ -1,0 +1,24 @@
+en:
+  admin:
+    products:
+      index:
+        manage_products: Manage Products
+        image: Image
+        name: Product Name
+        description: Description
+        price: Price
+        actions: Actions
+        add_new_product: Add new product
+      new:
+        new_product: New Product
+      edit:
+        edit_product: Edit Product
+      form:
+        name: Name
+        description: Description
+        price: Price
+        categories: Categories
+        add_image: Add Image
+        create_product: Create Product
+      image:
+        image: Image

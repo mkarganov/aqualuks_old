@@ -1,0 +1,6 @@
+en:
+  layouts:
+    admin:
+      admin_dashboard_title: Octopus Admin
+      products: Products
+      categories: Categories

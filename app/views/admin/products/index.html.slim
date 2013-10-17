@@ -1,8 +1,8 @@
-h1= t('.main_title')
+h1= t('.manage_products')
 table.table.table-bordered.table-stripped.table-hover.table-responsive
   thead
     tr
-      td=('.image')
+      td=t('.image')
       td=t('.name')
       td=t('.description')
       td=t('.price')
@@ -15,7 +15,7 @@ table.table.table-bordered.table-stripped.table-hover.table-responsive
         td=product.description
         td=product.price
         td
-          =link_to "Edit ", edit_admin_product_path(product)
-          =link_to "Delete", admin_product_path(product), method: :delete, data: { confirm: t('helpers.links.confirm')}
+          =link_to "#{t('helpers.links.edit') + ' '}", edit_admin_product_path(product)
+          =link_to t('helpers.links.destroy'), admin_product_path(product), method: :delete, data: { confirm: t('helpers.links.confirm')}
 
 =link_to t('.add_new_product'), new_admin_product_path

@@ -1,0 +1,5 @@
+en:
+  admin:
+    dashboards:
+      index:
+        admin_dashboard: Admin Dashboard

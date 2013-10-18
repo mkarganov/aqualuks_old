@@ -12,9 +12,9 @@
  *= require bootstrap_and_overrides
  *= require_tree .
  */
-body {
-  padding-top: 60px;
-}
+.admin-body {
+  padding-top: 50px;
+  }
 .basic_image {
   position: absolute;
   top: 15%;
@@ -23,7 +23,7 @@ body {
 
 #nav-footer .navbar-inner {
   /* height: 5em; */
-  /* background-color: #352672; /1* fallback color, place your own *1/ */
+   /* background: #352672; */
   /* border: 1px solid #0a1020; */
 
   /* /1* Gradients for modern browsers, replace as you see fit *1/ */

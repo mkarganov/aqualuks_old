@@ -1,3 +1,10 @@
 h1 Welcome to the octopus website
 p content coming soon
-.basic_image= image_tag 'octopus.png'
+#myCarousel.carousel.slide
+  .carousel-inner
+    - @products.each_slice(4).with_index do |products, i|
+      = content_tag(:div, class: i.zero? ? 'item active' : 'item') do
+        = render partial: 'welcome/product', collection: products
+  a.carousel-control.left href='#myCarousel' data-slide='prev' &lsaquo;
+  a.carousel-control.right href='#myCarousel' data-slide='next' &rsaquo;
+

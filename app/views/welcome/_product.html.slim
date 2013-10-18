@@ -1,0 +1,9 @@
+.product-pack.row-fluid
+  .span12
+    .span3= image_tag(product.product_images.first.image_url, size: '55x55')
+    .span9
+      .title
+        b= link_to product.name, ''
+      .title
+        b= link_to 'SEOND LINK' ''
+  p.span12= truncate(product.description, length: 200)

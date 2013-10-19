@@ -1,7 +1,6 @@
-.product-pack
-  figure
-    = image_tag(product.product_images.first.image_url, size: '350x350')
-    figcaption
-      h3= product.name
-      p= truncate(product.description, length: 200)
-      =link_to 'Read More', '#'
+.product-pack.view.view-first
+  = image_tag(product.product_images.first.image_url)
+  .mask
+    h3= product.name
+    p= truncate(product.description, length: 200)
+    =link_to 'Read More', '#', class: 'info'

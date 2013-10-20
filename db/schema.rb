@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131015090609) do
+ActiveRecord::Schema.define(version: 20131020192958) do
+
+  create_table "authorizations", force: true do |t|
+    t.string   "uid"
+    t.string   "provider"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "title"
@@ -37,6 +45,16 @@ ActiveRecord::Schema.define(version: 20131015090609) do
     t.string   "name"
     t.text     "description"
     t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "name"
+    t.string   "password_digest"
+    t.string   "password_reset_token"
+    t.string   "password_reset_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

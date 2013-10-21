@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
 
+  skip_before_filter :require_email
+  before_filter :find_user
+
   def new
     @user = env['omniauth.identity'] ||= User.new
   end
 
   def update
-    @user = User.find_by(id: params[:id])
     if @user and @user.update_attributes(user_params)
       redirect_to root_url
     else
@@ -16,7 +18,11 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :email)
+  end
+
+  def find_user
+    @user = User.find_by_id(params[:id])
   end
 
 end

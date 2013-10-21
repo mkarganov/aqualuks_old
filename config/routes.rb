@@ -1,7 +1,7 @@
 Octopus::Application.routes.draw do
   get "welcome/index"
 
-  resources :users
+  resources :users, only: [:update, :edit]
   resource :session
 
   get '/login' => 'sessions#new'

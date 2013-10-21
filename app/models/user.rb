@@ -3,8 +3,7 @@ class User < ActiveRecord::Base
   has_many :authorizations, dependent: :destroy
 
   def self.create_with_omniauth(auth)
-    binding.pry
-    create(name: auth['info']['name'], email: auth['info']['email'], password_digest: rand(10**36).to_s(36))
+    create(name: auth['info']['name'], email: auth['info']['email'])
   end
 
   # def send_password_reset

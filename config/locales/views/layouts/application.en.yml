@@ -1,6 +1,9 @@
 en:
   layouts:
-    application:
+    nav_header:
+      login_with: Login With
+      logout: Log Out
+    nav_footer:
       contact_us: Contact Us
       delivery: Delivery
       how_to_buy: How to buy?

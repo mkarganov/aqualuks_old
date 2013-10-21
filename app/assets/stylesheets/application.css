@@ -12,16 +12,35 @@
  *= require bootstrap_and_overrides
  *= require_tree .
  */
-.admin-body {
+
+body {
   padding-top: 50px;
   }
+
 .basic_image {
   position: absolute;
   top: 15%;
   left: 25%;
 }
 
-#nav-footer .navbar-inner {
+.login_with {
+  padding-top: 10px;
+}
+
+.login-icon {
+  padding: 0;
+  -webkit-transition: all 0.1s linear;
+}
+
+.icon-vk {
+  font-size: 18px;
+}
+
+.login-icon:hover {
+  -webkit-transform: scale(1.3);
+}
+
+/* #nav-footer .navbar-inner { */
   /* height: 5em; */
    /* background: #352672; */
   /* border: 1px solid #0a1020; */
@@ -34,6 +53,6 @@
   /* background-image: -o-linear-gradient(top, #333333, #222222); */
   /* background-image: linear-gradient(top, #333333, #222222); */
   /* background-repeat: repeat-x; */
-}
+/* } */
 
 .translation_missing { background: red; color: black; }

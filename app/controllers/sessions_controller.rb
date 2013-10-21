@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
-    def create
-    binding.pry
+  def create
     auth = request.env['omniauth.auth']
     # Find an authentication or create an authentication
     @authorization = Authorization.find_with_omniauth(auth)
@@ -26,7 +25,6 @@ class SessionsController < ApplicationController
         redirect_to root_path, notice: "Account successfully authenticated"
       end
     else # no user is signed_in
-      binding.pry
       if @authorization.user.present?
         # The authentication we found had a user associated with it so let's
         # just log them in here
@@ -38,20 +36,18 @@ class SessionsController < ApplicationController
         # But your app may do something different (eg. ask the user
         # if he already signed up with some other service)
         # if @authorization.provider == 'identity'
-          # u = User.find(@authorization.uid)
-          # If the provider is identity, then it means we already created a user
-          # So we just load it up
+        # u = User.find(@authorization.uid)
+        # If the provider is identity, then it means we already created a user
+        # So we just load it up
         # else
-          # otherwise we have to create a user with the auth hash
-          u = User.create_with_omniauth(auth)
-          binding.pry
-          # NOTE: we will handle the different types of data we get back
-          # from providers at the model level in create_with_omniauth
+        # otherwise we have to create a user with the auth hash
+        u = User.create_with_omniauth(auth)
+        # NOTE: we will handle the different types of data we get back
+        # from providers at the model level in create_with_omniauth
         # end
         # We can now link the authentication with the user and log him in
         u.authorizations << @authorization
         self.current_user = u
-        binding.pry
         redirect_to root_path, notice: "Welcome to The app!"
       end
     end

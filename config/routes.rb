@@ -1,6 +1,13 @@
 Octopus::Application.routes.draw do
   get "welcome/index"
 
+  resources :users, only: [:update, :edit]
+  resource :session
+
+  get '/login' => 'sessions#new'
+  match '/auth/:provider/callback' => 'sessions#create', via: [:get, :post]
+  get '/auth/failure' => 'sessions#failure'
+
   namespace :admin do
     get :dashboard, to: 'dashboards#index'
     resources :products

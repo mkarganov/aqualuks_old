@@ -1,0 +1,22 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"
+        span class="icon-bar"
+        span class="icon-bar"
+        span class="icon-bar"
+        .nav-collapse
+          = link_to 'Octopus', '', class: 'brand'
+        .pull-right
+          ul.nav
+            - if current_user
+              li.login_with= "Welcome, #{current_user.name}"
+              li= link_to t('.logout'), session_path, method: :delete
+            - else
+              li.login_with= t('.login_with')
+              li.login-icon
+                a href='/auth/vkontakte/'
+                  i class='icon-vk'
+              li.login-icon
+                a href='/auth/facebook/'
+                  i class='icon-facebook'

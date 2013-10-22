@@ -3,6 +3,10 @@ Octopus::Application.routes.draw do
 
   resources :users, only: [:update, :edit]
   resource :session
+  resource :cart, only: [:show]
+  resources :products, only: [:show] do
+    get 'add_to_cart', on: :member
+  end
 
   get '/login' => 'sessions#new'
   match '/auth/:provider/callback' => 'sessions#create', via: [:get, :post]

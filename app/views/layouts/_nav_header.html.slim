@@ -9,11 +9,16 @@
           = link_to 'Octopus', '', class: 'brand'
         .pull-right
           ul.nav
+            li.navbar-text Cart
+            li
+              i class='icon-shopping-cart'
+            li=link_to cart_path do
+              = pluralize(session[:cart].count, 'item') if session[:cart]
             - if current_user
               li.login_with= "Welcome, #{current_user.name}"
               li= link_to t('.logout'), session_path, method: :delete
             - else
-              li.login_with= t('.login_with')
+              li.navbar-text= t('.login_with')
               li.login-icon
                 a href='/auth/vkontakte/'
                   i class='icon-vk'

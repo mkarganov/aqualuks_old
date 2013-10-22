@@ -1,0 +1,7 @@
+table.table.table-bordered.table-striped
+  - @products.each do |product|
+    tr
+      td= product.name
+      td= product.description
+      td= product.price
+.pull-right= link_to 'Checkout', '', class: 'btn'

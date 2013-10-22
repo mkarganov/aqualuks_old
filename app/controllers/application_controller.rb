@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_filter :require_email
+  before_filter :require_email, :setup_cart
 
   protected
 
@@ -31,6 +31,10 @@ class ApplicationController < ActionController::Base
     if current_user && current_user.email.nil?
       redirect_to edit_user_path(current_user)
     end
+  end
+
+  def setup_cart
+    session[:cart] ||= []
   end
 
 end

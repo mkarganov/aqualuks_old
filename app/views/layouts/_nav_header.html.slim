@@ -15,7 +15,7 @@
             li=link_to cart_path do
               = pluralize(session[:cart].count, 'item') if session[:cart]
             - if current_user
-              li.login_with= "Welcome, #{current_user.name}"
+              li.navbar-text= "Welcome, #{current_user.name}"
               li= link_to t('.logout'), session_path, method: :delete
             - else
               li.navbar-text= t('.login_with')

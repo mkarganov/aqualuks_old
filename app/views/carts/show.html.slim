@@ -4,4 +4,7 @@ table.table.table-bordered.table-striped
       td= product.name
       td= product.description
       td= product.price
-.pull-right= link_to 'Checkout', '', class: 'btn'
+.pull-right
+  p= t('.total_price')
+  = total_price(@products)
+  = link_to 'Checkout', '', class: 'btn'

@@ -5,6 +5,6 @@ table.table.table-bordered.table-striped
       td= product.description
       td= product.price
 .pull-right
-  p= t('.total_price')
-  = total_price(@products)
-  = link_to 'Checkout', '', class: 'btn'
+  = t('.total_price')
+  = number_to_currency(total_price(@products))
+  p= link_to 'Checkout', '', class: 'btn'

@@ -2,6 +2,9 @@ class Product < ActiveRecord::Base
   has_many :product_categories
   has_many :categories, through: :product_categories
   has_many :product_images, dependent: :destroy
+  has_many :order_products
+  has_many :orders, through: :order_products
+
 
   accepts_nested_attributes_for :product_images, allow_destroy: true
 

@@ -1,10 +1,12 @@
-table.table.table-bordered.table-striped
-  - @products.each do |product|
-    tr
-      td= product.name
-      td= product.description
-      td= product.price
-.pull-right
-  = t('.total_price')
-  = number_to_currency(total_price(@products))
-  p= link_to 'Checkout', '', class: 'btn'
+=simple_form_for :order_products, url: checkout_new_cart_path do |f|
+  table.table.table-bordered.table-striped
+    - @products.each do |product|
+      tr
+        td= product.name
+        td= product.description
+        td= product.price
+      = f.hidden_field :product_id, multiple: true, value: product.id
+  .pull-right
+    = t('.total_price')
+    = number_to_currency(total_price(@products))
+    p= f.button :submit

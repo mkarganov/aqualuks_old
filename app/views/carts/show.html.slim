@@ -1,11 +1,21 @@
-=simple_form_for :order_products, url: checkout_new_cart_path do |f|
-  table.table.table-bordered.table-striped
-    - @products.each do |product|
+=simple_form_for :cart, url: checkout_cart_path do |f|
+  table.table.table-hover
+    thead
       tr
+        td= t('.image')
+        td= t('.name')
+        td= t('.decsription')
+        td= t('.quantity')
+        td= t('.price')
+    - @products.each_with_index do |product, i|
+      tr
+        td= image_tag product.product_images.first.image_url(:thumb).to_s
         td= product.name
         td= product.description
+        td= f.simple_fields_for :products, index: i do |field|
+          = field.hidden_field :product_id, value: product.id
+          = field.input :quantity, as: :integer, input_html: { value: 1, class: 'span1'}
         td= product.price
-      = f.hidden_field :product_id, multiple: true, value: product.id
   .pull-right
     = t('.total_price')
     = number_to_currency(total_price(@products))

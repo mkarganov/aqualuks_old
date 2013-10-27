@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025151810) do
+ActiveRecord::Schema.define(version: 20131027200130) do
 
   create_table "authorizations", force: true do |t|
     t.string   "uid"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20131025151810) do
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "quantity"
   end
 
   create_table "orders", force: true do |t|

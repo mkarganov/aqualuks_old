@@ -5,7 +5,11 @@ class ProductsController < ApplicationController
   end
 
   def add_to_cart
-    session[:cart] << params[:id]
+    if session[:cart].include?(params[:id])
+      flash[:notice] = t('.already_added')
+    else
+      session[:cart] << params[:id]
+    end
     redirect_to root_path
   end
 

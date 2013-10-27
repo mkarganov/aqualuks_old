@@ -4,10 +4,13 @@ class CartsController < ApplicationController
     @products = Product.find(session[:cart].uniq)
   end
 
-  def checkout_new
-    binding.pry
-    @products = Product.find(session[:cart].uniq)
-    @order.products = @products
+  def checkout
+    @order = Order.create()
+    parameters = params[:cart][:products]
+    parse_cart_params(parameters)
+    @parsed_params.each do |item|
+      @order.order_products.create(product: Product.find(item[:product_id]), quantity: item[:quantity])
+    end
   end
 
   def checkout_create

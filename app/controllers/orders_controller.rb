@@ -4,7 +4,6 @@ class OrdersController < ApplicationController
     @order = Order.new
     @products = Product.find(session[:cart].uniq)
     @order_products = @order.order_products.build(@products.map{|p| {product_id: p.id}})
-    binding.pry
   end
 
   def create

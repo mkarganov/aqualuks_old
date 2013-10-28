@@ -14,9 +14,9 @@
         td= order_product.description
         td= f.fields_for :order_products, order_product do |field|
           = field.hidden_field :product_id
-          = field.input :quantity, as: :integer, input_html: { value: 1, class: 'span1'}
-        td= order_product.price
+          = field.input :quantity, as: :integer, input_html: { min: 1, pattern: "[0-9]", value: 1, data: {price: order_product.price}, class: 'span1'}
+        td.price= order_product.price.to_f
   .pull-right
     = t('.total_price')
-    = number_to_currency(total_price(@products))
+    #total-price= number_to_currency(total_price(@products))
     p= f.button :submit

@@ -5,14 +5,6 @@ class ApplicationController < ActionController::Base
 
   before_filter :require_email, :setup_cart
 
-  def parse_cart_params(parameters)
-    @parsed_params = []
-    parameters.each_value do |product_info|
-      @parsed_params << product_info
-    end
-    @parsed_params
-  end
-
   protected
 
   def current_user

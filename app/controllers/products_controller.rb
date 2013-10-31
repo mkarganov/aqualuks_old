@@ -9,8 +9,8 @@ class ProductsController < ApplicationController
       flash[:notice] = t('.already_added')
     else
       session[:cart] << params[:id]
+      @new_item = true
     end
-    redirect_to root_path
   end
 
 end

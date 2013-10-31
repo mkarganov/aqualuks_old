@@ -3,4 +3,4 @@
   .mask
     h3= product.name
     p= truncate(product.description, length: 200)
-    =link_to 'Add To Cart', add_to_cart_product_path(product), class: 'info'
+    =link_to 'Add To Cart', add_to_cart_product_path(product), class: 'info', remote: true

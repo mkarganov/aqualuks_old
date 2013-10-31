@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20131027200130) do
   create_table "orders", force: true do |t|
     t.string   "customer_name"
     t.text     "address"
-    t.integer  "phone"
+    t.string   "phone"
     t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"

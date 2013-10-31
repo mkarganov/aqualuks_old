@@ -1,4 +1,4 @@
-=simple_form_for @order, url: order_path do |f|
+=simple_form_for @order, url: orders_path do |f|
   table.table.table-hover
     thead
       tr
@@ -14,7 +14,7 @@
         td= order_product.description
         td= f.fields_for :order_products, order_product do |field|
           = field.hidden_field :product_id
-          = field.input :quantity, as: :integer, input_html: { min: 1, pattern: "[0-9]", value: 1, data: {price: order_product.price}, class: 'span1'}
+          = field.input :quantity, collection: 1..100, selected: 1, input_html: { data: {price: order_product.price}, class: 'span1'}
         td.price= order_product.price.to_f
   .pull-right
     = t('.total_price')

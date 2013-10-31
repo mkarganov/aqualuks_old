@@ -3,7 +3,7 @@ Octopus::Application.routes.draw do
 
   resources :users, only: [:update, :edit]
   resource :session
-  resource :order
+  resources :orders
   resources :products, only: [:show] do
     get 'add_to_cart', on: :member
   end

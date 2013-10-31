@@ -7,11 +7,26 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.create(order_params)
+    @order = Order.new(order_params)
+    @order.save(validate: false)
+    redirect_to edit_order_path(@order)
+  end
+
+  def edit
+    @order = Order.find(params[:id])
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    if @order.update(order_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def order_params
-    params.require(:order).permit(order_products_attributes: [:id, :quantity])
+    params.require(:order).permit(:customer_name, :address, :phone, :comment, order_products_attributes: [:product_id, :quantity])
   end
 
 end

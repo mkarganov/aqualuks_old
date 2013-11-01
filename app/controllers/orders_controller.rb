@@ -25,6 +25,16 @@ class OrdersController < ApplicationController
     end
   end
 
+  def destroy
+    @id = params[:id]
+    session[:cart].delete(@id)
+  end
+
+  def empty_cart
+    session[:cart] = []
+    redirect_to root_path
+  end
+
   def order_params
     params.require(:order).permit(:customer_name, :address, :phone, :comment, order_products_attributes: [:product_id, :quantity])
   end

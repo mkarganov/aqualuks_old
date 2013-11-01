@@ -1,0 +1,13 @@
+en:
+  orders:
+    new:
+      image: Image
+      name: Name
+      description: Description
+      quantity: Quantity
+      price: Price
+      remove: Remove
+      total_price: Total Price
+      checkout: Checkout
+      empty_cart: Empty cart!
+

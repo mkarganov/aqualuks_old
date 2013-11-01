@@ -1,7 +1,10 @@
 if $('input[value="<%=@id%>"]').parents('tbody').children().length < 2
   window.location = '<%= root_path%>'
 else
-  a = $('input[value="<%=@id%>"]').parents('tr')
-  a.fadeOut(300, ->
-    a.remove()
+  product = $('input[value="<%=@id%>"]').parents('tr')
+  product.fadeOut(300, ->
+    product.remove()
+    calculateTotals()
+    counter = parseInt($('#count_cart').text())
+    $('#count_cart').text(counter-1 + ' items')
   )

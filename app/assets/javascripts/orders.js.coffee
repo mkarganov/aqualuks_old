@@ -1,11 +1,4 @@
 $ ->
-  calculateTotals = ->
-    total = 0
-    $('.price').each((i)->
-      total += parseFloat($(@).text())
-    )
-    $("#total-price").text(total.toFixed(2))
-
   $(document).on 'click', 'select', (e) ->
     basic_price = $(@).data('price')
     quantity = $(@).val()

@@ -1,10 +1,23 @@
-=image_tag('1170x300.gif')
+= image_tag('1170x300.gif')
 h1 Featured Products
-#myCarousel.carousel.slide
+#featured-carousel.carousel.slide
   .carousel-inner
     - @products.each_slice(4).with_index do |products, i|
       = content_tag(:div, class: i.zero? ? 'item active' : 'item') do
         = render partial: 'welcome/product', collection: products
-  a.carousel-control.left href='#myCarousel' data-slide='prev' &lsaquo;
-  a.carousel-control.right href='#myCarousel' data-slide='next' &rsaquo;
+  a.carousel-control.left href='#featured-carousel' data-slide='prev' &lsaquo;
+  a.carousel-control.right href='#featured-carousel' data-slide='next' &rsaquo;
+h1 Popular
+#popular-carousel.carousel.slide
+  .carousel-inner
+    - @products.each_slice(4).with_index do |products, i|
+      = content_tag(:div, class: i.zero? ? 'item active' : 'item') do
+        = render partial: 'welcome/product', collection: products
+  a.carousel-control.left href='#popular-carousel' data-slide='prev' &lsaquo;
+  a.carousel-control.right href='#popular-carousel' data-slide='next' &rsaquo;
+
+#full-catalog.well
+  button.btn.btn-block.btn-large.btn-success Full Catalouge
+
+
 

@@ -21,3 +21,4 @@ table.table.table-bordered.table-stripped.table-hover.table-responsive
         td=check_box_tag("featured_#{product.id}", product.id, product.featured?, class: 'featured')
 
 =link_to t('.add_new_product'), new_admin_product_path
+= render partial: 'products_marker'

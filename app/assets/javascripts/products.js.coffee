@@ -13,14 +13,3 @@ $ ->
     row.find($('.destroy_field input')).val(true)
     row.addClass('hide')
     return false
-
-  $('.featured').click ->
-    id = $(@).val()
-    val = $(@).is(':checked')
-    $.ajax(
-      url: "/admin/products/#{id}.js",
-      type: 'PATCH',
-      data: product: {featured: val},
-      success: (data) ->
-        alert('Load was performed.')
-    )

@@ -1,0 +1,20 @@
+javascript:
+  $(function() {
+    $('.featured').click(function() {
+      var id, val;
+      id = $(this).val();
+      val = $(this).is(':checked');
+      return $.ajax({
+        url: "/admin/products/" + id + ".js",
+        type: 'PATCH',
+        data: {
+          product: {
+            featured: val
+          },
+          success: function(data) {
+            return alert('Load was performed.');
+          }
+        }
+      });
+    });
+  });

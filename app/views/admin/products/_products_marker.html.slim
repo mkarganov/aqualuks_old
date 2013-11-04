@@ -1,20 +1,15 @@
 javascript:
   $(function() {
-    $('.featured').click(function() {
-      var id, val;
+    $('input[type=checkbox]').click(function() {
+      var id, val, marker_type, data = {'product': {}};
       id = $(this).val();
       val = $(this).is(':checked');
+      marker_type = $(this).attr('class');
+      data['product'][marker_type] = val;
       return $.ajax({
         url: "/admin/products/" + id + ".js",
         type: 'PATCH',
-        data: {
-          product: {
-            featured: val
-          },
-          success: function(data) {
-            return alert('Load was performed.');
-          }
-        }
+        data: data
       });
     });
   });

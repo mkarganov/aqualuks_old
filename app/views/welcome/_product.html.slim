@@ -1,6 +1,6 @@
 .product-pack.view.view-first
   = image_tag(product.product_images.first.image_url)
   .mask
-    h3= product.name
+    h3 = link_to product.name, product_path(product)
     p= truncate(product.description, length: 200)
     =link_to 'Add To Cart', add_to_cart_product_path(product), class: 'info', remote: true

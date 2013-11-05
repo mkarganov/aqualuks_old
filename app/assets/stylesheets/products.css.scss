@@ -3,3 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 textarea { resize: vertical; }
+
+#imagePreview {
+  width: 900px; /* SET THE WIDTH OF THE MODAL */
+  margin: 0 0 0 -450px; /* CHANGE MARGINS TO ACCOMODATE THE NEW WIDTH (original = margin: -250px 0 0 -280px;) */
+  background: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border: none;
+
+  .close {
+    color: white;
+    opacity: 1;
+  }
+}

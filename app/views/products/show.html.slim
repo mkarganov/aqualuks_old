@@ -1,4 +1,23 @@
 h2= @product.name
 p= @product.description
 p= @product.price
-=link_to 'Add to cart', add_to_cart_product_path(@product)
+.row-fluid
+  ul.inline
+    - @product.product_images.each do |image|
+      li
+        =link_to '#imagePreview', remote: true, data: { toggle: 'modal', keyboard: true} do
+          =image_tag(image.image_url(:thumb))
+p=link_to 'Add to cart', add_to_cart_product_path(@product)
+
+#imagePreview.modal.fade tabindex='-1'
+  button type="button" class="close" data-dismiss="modal" aria-hidden="true" ×
+  .slider
+    ul.slides.unstyled
+      - @product.product_images.each do |image|
+        li.slide
+          = image_tag(image.image_url)
+
+javascript:
+  $(function() {
+    $('.modal').hide();
+  });

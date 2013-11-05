@@ -13,3 +13,9 @@ $ ->
     row.find($('.destroy_field input')).val(true)
     row.addClass('hide')
     return false
+
+  $('#imagePreview .slider').glide(
+    autoplay: false,
+    arrows: true
+    nav: false
+  )

@@ -2,7 +2,7 @@ h2= @product.name
 p= @product.description
 p= @product.price
 .row-fluid
-  ul.inline
+  ul.inline#preview
     - @product.product_images.each do |image|
       li
         =link_to '#imagePreview', remote: true, data: { toggle: 'modal', keyboard: true} do
@@ -14,10 +14,15 @@ p=link_to 'Add to cart', add_to_cart_product_path(@product)
   .slider
     ul.slides.unstyled
       - @product.product_images.each do |image|
-        li.slide
+        li.slide-glide
           = image_tag(image.image_url)
 
 javascript:
   $(function() {
+    $('#imagePreview > .slider').glide({
+      autoplay: false,
+      arrows: true,
+      nav: false
+    });
     $('.modal').hide();
   });

@@ -16,14 +16,5 @@ h1 Popular
   a.carousel-control.left href='#popular-carousel' data-slide='prev' &lsaquo;
   a.carousel-control.right href='#popular-carousel' data-slide='next' &rsaquo;
 
-#welcome-slider
-  .slider
-    ul.slides
-      - @popular_products.each_slice(4).with_index do |products, i|
-        li.slide-glide
-          = render partial: 'welcome/product', collection: products
 #full-catalog.well
   button.btn.btn-block.btn-large.btn-success Full Catalouge
-
-
-

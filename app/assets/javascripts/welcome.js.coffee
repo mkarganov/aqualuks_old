@@ -3,8 +3,3 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $('.carousel').carousel( interval: false )
-  $('#welcome-slider > .slider').glide(
-    autoplay: false,
-    arrows: true,
-    nav: false
-  )

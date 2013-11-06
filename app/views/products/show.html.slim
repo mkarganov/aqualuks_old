@@ -1,15 +1,24 @@
-h2= @product.name
-p= @product.description
-p= @product.price
 .row-fluid
-  ul.inline#preview
-    - @product.product_images.each do |image|
+  .span5
+    h2= @product.name
+    p= image_tag(@product.product_images.first.image_url)
+    p= @product.price
+    .row-fluid
+      ul.inline#preview
+        - @product.product_images.each do |image|
+          li.span2
+            =link_to '#imagePreview', remote: true do
+              =image_tag(image.image_url(:thumb))
+    p=link_to 'Add to cart', add_to_cart_product_path(@product), remote: true
+  .span7
+    ul.nav.nav-tabs
+      li.active
+        a href='#' Description
       li
-        =link_to '#imagePreview', remote: true, data: { toggle: 'modal', keyboard: true} do
-          =image_tag(image.image_url(:thumb))
-p=link_to 'Add to cart', add_to_cart_product_path(@product)
+        a href='#' Characteristics
+    p= @product.description
 
-#imagePreview.modal.fade tabindex='-1'
+#image-preview-modal.modal.fade tabindex='-1'
   button type="button" class="close" data-dismiss="modal" aria-hidden="true" ×
   .slider
     ul.slides.unstyled
@@ -19,10 +28,14 @@ p=link_to 'Add to cart', add_to_cart_product_path(@product)
 
 javascript:
   $(function() {
-    $('#imagePreview > .slider').glide({
+    var glide = $('#image-preview-modal > .slider').glide({
       autoplay: false,
       arrows: true,
       nav: false
-    });
+    }).data('api_glide');
     $('.modal').hide();
+    $('#preview li').click(function() {
+      glide.jump($(this).index() + 1);
+      $('#image-preview-modal').modal();
+    });
   });

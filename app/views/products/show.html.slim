@@ -1,16 +1,20 @@
 .row-fluid
   .span5
-    h2= @product.name
-    p= image_tag(@product.product_images.first.image_url)
-    p= @product.price
+    p.main-image= image_tag(@product.product_images.first.image_url)
     .row-fluid
       ul.inline#preview
         - @product.product_images.each do |image|
           li.span2
-            =link_to '#imagePreview', remote: true do
+            =link_to '#', remote: true do
               =image_tag(image.image_url(:thumb))
-    p=link_to 'Add to cart', add_to_cart_product_path(@product), remote: true
   .span7
+    .row-fluid
+      .span4
+        h2= @product.name
+        ul.well.inline
+          li= number_to_currency(@product.price)
+          li=link_to t('.add_to_cart'), add_to_cart_product_path(@product), class: 'btn', remote: true
+      .span3
     ul.nav.nav-tabs
       li.active
         a href='#' Description
@@ -26,16 +30,16 @@
         li.slide-glide
           = image_tag(image.image_url)
 
-javascript:
-  $(function() {
-    var glide = $('#image-preview-modal > .slider').glide({
-      autoplay: false,
-      arrows: true,
-      nav: false
-    }).data('api_glide');
-    $('.modal').hide();
-    $('#preview li').click(function() {
-      glide.jump($(this).index() + 1);
-      $('#image-preview-modal').modal();
-    });
-  });
+/* javascript: */
+/*   $(function() { */
+/*     var glide = $('#image-preview-modal > .slider').glide({ */
+/*       autoplay: false, */
+/*       arrows: true, */
+/*       nav: false */
+/*     }).data('api_glide'); */
+/*     $('.modal').hide(); */
+/*     $('#preview li').click(function() { */
+/*       glide.jump($(this).index() + 1); */
+/*       $('#image-preview-modal').modal(); */
+/*     }); */
+/*   }); */

@@ -1,0 +1,27 @@
+button type="button" class="close" data-dismiss="modal" aria-hidden="true"×
+=simple_form_for @order, url: orders_path do |f|
+  table.table.table-hover
+    thead
+      tr
+        td= t('.image')
+        td= t('.name')
+        td= t('.description')
+        td= t('.quantity')
+        td= t('.price')
+    - @order_products.each do |order_product|
+      tr
+        td= image_tag order_product.product_images.first.image_url(:thumb).to_s
+        td= order_product.name
+        td= order_product.description
+        td= f.fields_for :order_products, order_product do |field|
+          = field.hidden_field :product_id
+          = field.input :quantity, collection: 1..100, selected: 1, input_html: { data: {price: order_product.price}, class: 'span1'}
+        td.price= order_product.price.to_f
+        /* td.remove= link_to t('.remove'), '#' */
+        td.remove= link_to t('.remove'), order_path(order_product.product_id), method: :delete, remote: true
+  .pull-right
+    p=link_to t('.empty_cart'), empty_cart_orders_path
+    = t('.total_price')
+    #total-price= number_to_currency(total_price(@products))
+    p= f.button :submit
+

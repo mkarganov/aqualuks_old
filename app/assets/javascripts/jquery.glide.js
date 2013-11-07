@@ -130,7 +130,7 @@
                  */
                 $(window).on('resize', function() {
                         // Reinit plugin (set new slider dimensions)
-                        _.init();
+                        // _.init();
                         // Crop to current slide
                         _.slide(0);
                 });

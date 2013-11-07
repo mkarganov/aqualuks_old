@@ -13,3 +13,21 @@ $ ->
     row.find($('.destroy_field input')).val(true)
     row.addClass('hide')
     return false
+
+  ready = ->
+    glide = $('#image-preview-modal > .slider').glide({
+        autoplay: false,
+        arrows: true,
+        arrowMainClass: 'carousel-control',
+        arrowRightClass: 'right',
+        arrowLeftClass: 'left',
+        arrowRightText: '›',
+        arrowLeftText: '‹',
+        nav: false
+      }).data('api_glide')
+      $('.modal').hide()
+      $('#preview li').click ->
+        glide.jump($(this).index() + 1)
+        $('#image-preview-modal').modal()
+  $(document).ready(ready)
+  $(document).on('page:load', ready)

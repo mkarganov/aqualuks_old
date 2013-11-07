@@ -12,7 +12,7 @@
             li.navbar-text Cart
             li
               i class='icon-shopping-cart'
-            li=link_to new_order_path do
+            li=link_to new_order_path, remote: true do
               #count_cart= pluralize(session[:cart].count, 'item') if session[:cart]
             - if current_user
               li.navbar-text= "Welcome, #{current_user.name}"

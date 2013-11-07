@@ -1,6 +1,6 @@
 en:
   orders:
-    new:
+    cart:
       image: Image
       name: Name
       description: Description

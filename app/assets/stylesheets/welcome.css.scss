@@ -22,47 +22,47 @@
     cursor: default;
 
     .mask {
-    width: 248px;
-    height: 150px;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0
+      width: 248px;
+      height: 150px;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0
     }
 
     img {
-    display: block;
-    position: relative
+      display: block;
+      position: relative
     }
 
     h3 {
-    text-transform: uppercase;
-    color: #fff;
-    text-align: center;
-    position: relative;
-    font-size: 17px;
-    padding: 2px;
-    background: rgba(0, 0, 0, 0.8);
-    margin: 20px 0 0 0
+      text-transform: uppercase;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      font-size: 17px;
+      padding: 2px;
+      background: rgba(0, 0, 0, 0.8);
+      margin: 20px 0 0 0
     }
     p {
-    font-family: Georgia, serif;
-    font-style: italic;
-    font-size: 12px;
-    position: relative;
-    color: #fff;
-    padding: 2px 20px 20px;
-    text-align: center
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-size: 12px;
+      position: relative;
+      color: #fff;
+      padding: 2px 20px 20px;
+      text-align: center
     }
 
     a.info {
-    display: inline-block;
-    text-decoration: none;
-    padding: 7px 14px;
-    background: #000;
-    color: #fff;
-    text-transform: uppercase;
-    box-shadow: 0 0 1px #000;
+      display: inline-block;
+      text-decoration: none;
+      padding: 7px 14px;
+      background: #000;
+      color: #fff;
+      text-transform: uppercase;
+      box-shadow: 0 0 1px #000;
 
       &:hover  {
       box-shadow: 0 0 5px #000;
@@ -97,31 +97,23 @@
 
 }
 .view-first:hover img {
-    -webkit-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
 .view-first:hover .mask {
-    opacity: 1;
+  opacity: 1;
 }
 .view-first:hover h3,
 .view-first:hover p,
 .view-first:hover a.info {
-    opacity: 1;
-    -webkit-transform: translateY(0px);
+  opacity: 1;
+  -webkit-transform: translateY(0px);
 }
 .view-first:hover p {
-    webkit-transition-delay: 0.1s;
+  webkit-transition-delay: 0.1s;
 }
 .view-first:hover a.info {
-    -webkit-transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
 }
-
-
-
-// .carousel-inner {
-//   height: 194px;
-//   margin: 0 auto;
-//   width: 100%;
-// }
 
 .carousel {
   padding-left: 25px;

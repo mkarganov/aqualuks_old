@@ -1,8 +1,10 @@
 Octopus::Application.routes.draw do
+  get "catalogues_controller/index"
   get "welcome/index"
 
   resources :users, only: [:update, :edit]
   resource :session
+  resource :catalogue, only: [:show]
   resources :orders do
     get 'empty_cart', on: :collection
   end

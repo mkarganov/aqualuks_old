@@ -1,0 +1,17 @@
+.row-fluid
+  .pull-right
+    ul.nav.nav-pills
+      li.dropdown
+        =link_to "#", data: { toggle: 'dropdown' }, class: 'dropdown-toggle' do
+          span= 'All Categories'
+          b.caret
+        ul class="dropdown-menu" role="menu" aria-labelledby="dLabel"
+          li
+            a href="#" 'Category 1'
+            a href="#" 'Category 2'
+      li= simple_form_for :search, html: { class: 'form-search' } do |f|
+        = f.input :search, label: false, wrapper: :append do
+          = f.input_field :search, class: 'search-query'
+          = button_tag :search, class: 'btn'
+- @products.each_slice(4).with_index do |products, i|
+  = render partial: 'welcome/product', collection: products

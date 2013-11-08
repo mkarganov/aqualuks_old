@@ -1,0 +1,2 @@
+- @products.each_slice(4).with_index do |products, i|
+  = render partial: 'welcome/product', collection: products

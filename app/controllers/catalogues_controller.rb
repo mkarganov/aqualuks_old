@@ -1,5 +1,5 @@
 class CataloguesController < ApplicationController
   def show
-    @products = Product.all
+    @products = Product.search(params[:search])
   end
 end

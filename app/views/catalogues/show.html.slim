@@ -9,9 +9,9 @@
           li
             a href="#" 'Category 1'
             a href="#" 'Category 2'
-      li= simple_form_for :search, html: { class: 'form-search' } do |f|
-        = f.input :search, label: false, wrapper: :append do
-          = f.input_field :search, class: 'search-query'
-          = button_tag :search, class: 'btn'
-- @products.each_slice(4).with_index do |products, i|
-  = render partial: 'welcome/product', collection: products
+      li= form_tag catalogue_path, class: 'form-search', method: :get do
+        .input-append
+          = search_field_tag :search, params[:search], placeholder: 'Search products', class: 'search-query'
+          = submit_tag 'Search', name: nil, class: :btn
+#products
+  = render 'products'

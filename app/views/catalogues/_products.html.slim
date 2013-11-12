@@ -1,2 +1,4 @@
-- @products.each_slice(4).with_index do |products, i|
-  = render partial: 'welcome/product', collection: products
+.row-fluid
+  - @products.each_slice(4) do |products|
+    = render partial: 'welcome/product', collection: products
+= paginate @products, remote: true

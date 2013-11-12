@@ -5,10 +5,12 @@
         =link_to "#", data: { toggle: 'dropdown' }, class: 'dropdown-toggle' do
           span= 'All Categories'
           b.caret
+          = hidden_field_tag ''
         ul class="dropdown-menu" role="menu" aria-labelledby="dLabel"
-          li
-            a href="#" 'Category 1'
-            a href="#" 'Category 2'
+          li= link_to 'All Categories', catalogue_path, :'data-category' => ''
+          - @categories.each do |category|
+            li
+              = link_to category.title, catalogue_path(category_id: category.id), data: { category: category.id}
       li= form_tag catalogue_path, class: 'form-search', method: :get do
         .input-append
           = search_field_tag :search, params[:search], placeholder: 'Search products', class: 'search-query'

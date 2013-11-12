@@ -13,9 +13,17 @@ class Product < ActiveRecord::Base
   validates :price, presence: true
   validates_associated :product_images
 
-  def self.search(search)
+  def self.search(search = nil)
     if search
       where('name LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%")
+    else
+      all
+    end
+  end
+
+  def self.by_category(category_id = nil)
+    if category_id
+      joins(:categories).where('categories.id' => category_id)
     else
       all
     end

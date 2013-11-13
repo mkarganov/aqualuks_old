@@ -1,0 +1,7 @@
+en:
+  catalogues:
+    catalogue_menu:
+      nameasc: Sort by Name
+      priceasc: Low price first
+      pricedesc: High price first
+      created_atdesc: New first

@@ -22,7 +22,7 @@ class Product < ActiveRecord::Base
   end
 
   def self.by_category(category_id = nil)
-    if category_id
+    if category_id.present?
       joins(:categories).where('categories.id' => category_id)
     else
       all

@@ -1,6 +1,17 @@
 class CataloguesController < ApplicationController
+
   def show
-    @products = Product.by_category(params[:category_id]).search(params[:search]).order('name').page(params[:page]).per(2)
+    @products = Product.order(sort_column + ' ' + sort_direction).by_category(params[:category_id]).search(params[:search]).page(params[:page]).per(16)
     @categories = Category.all
+  end
+
+  private
+
+  def sort_column
+    Product.column_names.include?(params[:sort]) ? params[:sort] : 'name'
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : 'asc'
   end
 end

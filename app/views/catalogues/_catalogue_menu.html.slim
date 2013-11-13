@@ -1,0 +1,27 @@
+.row-fluid
+  .pull-right
+    ul.nav.nav-pills
+      li#filter.dropdown
+        =link_to "#", data: { toggle: 'dropdown' }, class: 'dropdown-toggle' do
+          span= 'All Categories'
+          b.caret
+          = hidden_field_tag ''
+        ul class="dropdown-menu" role="menu" aria-labelledby="dLabel"
+          li= link_to 'All Categories', catalogue_path, :'data-category' => ''
+          - @categories.each do |category|
+            li
+              = link_to category.title, catalogue_path(category_id: category.id), data: { category: category.id }
+      li#sort.dropdown
+        =link_to "#", data: { toggle: 'dropdown' }, class: 'dropdown-toggle' do
+          span= 'Name'
+          b.caret
+          = hidden_field_tag ''
+        ul.dropdown-menu
+          li= sortable 'name', 'asc'
+          li= sortable 'price', 'asc'
+          li= sortable 'price', 'desc'
+          li= sortable 'created_at', 'desc'
+      li= form_tag catalogue_path, class: 'form-search', method: :get do
+        .input-append
+          = search_field_tag :search, params[:search], placeholder: 'Search products', class: 'search-query'
+          = submit_tag 'Search', name: nil, class: :btn

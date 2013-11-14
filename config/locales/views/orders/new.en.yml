@@ -3,7 +3,6 @@ en:
     cart:
       image: Image
       name: Name
-      description: Description
       quantity: Quantity
       price: Price
       remove: Remove

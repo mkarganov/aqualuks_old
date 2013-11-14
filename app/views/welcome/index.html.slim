@@ -1,12 +1,13 @@
 = image_tag('1170x300.gif')
 h1 Featured Products
-#featured-carousel.carousel.slide
-  .carousel-inner
-    - @featured_products.each_slice(4).with_index do |products, i|
-      = content_tag(:div, class: i.zero? ? 'item active' : 'item') do
-        = render partial: 'welcome/product', collection: products
-  a.carousel-control.left href='#featured-carousel' data-slide='prev' &lsaquo;
-  a.carousel-control.right href='#featured-carousel' data-slide='next' &rsaquo;
+.row-fluid
+  #featured-carousel.carousel.slide
+    .carousel-inner
+      - @featured_products.each_slice(4).with_index do |products, i|
+        = content_tag(:div, class: i.zero? ? 'item active' : 'item') do
+          = render partial: 'welcome/product', collection: products
+    a.carousel-control.left href='#featured-carousel' data-slide='prev' &lsaquo;
+    a.carousel-control.right href='#featured-carousel' data-slide='next' &rsaquo;
 h1 Popular
 #popular-carousel.carousel.slide
   .carousel-inner

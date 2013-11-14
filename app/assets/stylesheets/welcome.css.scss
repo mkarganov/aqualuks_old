@@ -11,7 +11,7 @@
 
 .view {
     width: 248px;
-    height: 150px;
+    height: 180px;
     margin: 5px;
     float: left;
     border: 10px solid #fff;
@@ -32,7 +32,8 @@
 
     img {
       display: block;
-      position: relative
+      position: relative;
+      margin: auto;
     }
 
     h3 {
@@ -46,20 +47,33 @@
       margin: 20px 0 0 0
     }
     p {
-      font-family: Georgia, serif;
-      font-style: italic;
-      font-size: 12px;
       position: relative;
-      color: #fff;
-      padding: 2px 20px 20px;
-      text-align: center
+      padding-top: 7px;
+      border: solid 1px;
+      background-color: #FF5434;
+      border-radius: 3px;
+      width: 246px;
+      font-size: 20px;
     }
-
+    // p {
+    //   font-family: Georgia, serif;
+    //   font-style: italic;
+    //   font-size: 12px;
+    //   position: relative;
+    //   color: #fff;
+    //   padding: 2px 20px 20px;
+    //   text-align: center
+    // }
+    a {
+      text-decoration: none;
+      color: #490000
+    }
     a.info {
+      margin-top: 50px;
       display: inline-block;
       text-decoration: none;
       padding: 7px 14px;
-      background: #000;
+      background: #0BBD0B;
       color: #fff;
       text-transform: uppercase;
       box-shadow: 0 0 1px #000;
@@ -85,11 +99,11 @@
     opacity: 0;
     -webkit-transition: all 0.2s ease-in-out;
   }
-  p {
-    -webkit-transform: translateY(100px);
-    opacity: 0;
-    -webkit-transition: all 0.2s linear;
-  }
+  // p {
+  //   -webkit-transform: translateY(100px);
+  //   opacity: 0;
+  //   -webkit-transition: all 0.2s linear;
+  // }
   a.info {
     opacity: 0;
     -webkit-transition: all 0.2s ease-in-out;
@@ -102,15 +116,15 @@
 .view-first:hover .mask {
   opacity: 1;
 }
+// .view-first:hover p,
 .view-first:hover h3,
-.view-first:hover p,
 .view-first:hover a.info {
   opacity: 1;
   -webkit-transform: translateY(0px);
 }
-.view-first:hover p {
-  webkit-transition-delay: 0.1s;
-}
+// .view-first:hover p {
+//   webkit-transition-delay: 0.1s;
+// }
 .view-first:hover a.info {
   -webkit-transition-delay: 0.2s;
 }

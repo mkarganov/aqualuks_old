@@ -1,6 +1,6 @@
 .row-fluid
   .span5
-    p.main-image= image_tag(@product.product_images.first.image_url)
+    .main-image= image_tag(@product.product_images.first.image_url)
     .row-fluid
       ul.inline#preview
         - @product.product_images.each do |image|
@@ -9,8 +9,8 @@
               =image_tag(image.image_url(:thumb))
   .span7
     .row-fluid
+      h2= @product.name
       .span4
-        h2= @product.name
         ul.well.inline
           li= number_to_currency(@product.price)
           li=link_to t('.add_to_cart'), add_to_cart_product_path(@product), class: 'btn', remote: true
@@ -29,17 +29,3 @@
       - @product.product_images.each do |image|
         li.slide-glide
           = image_tag(image.image_url)
-
-/* javascript: */
-/*   $(function() { */
-/*     var glide = $('#image-preview-modal > .slider').glide({ */
-/*       autoplay: false, */
-/*       arrows: true, */
-/*       nav: false */
-/*     }).data('api_glide'); */
-/*     $('.modal').hide(); */
-/*     $('#preview li').click(function() { */
-/*       glide.jump($(this).index() + 1); */
-/*       $('#image-preview-modal').modal(); */
-/*     }); */
-/*   }); */

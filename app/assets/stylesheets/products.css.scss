@@ -23,8 +23,12 @@ textarea { resize: vertical; }
   .left { left: 0; }
   .right { right: 0; }
 }
+  img {
+    max-height: 420px;
+  }
 
 .main-image img {
-  width: 450px;
+  display: block;
+  margin: auto;
   max-height: 300px
 }

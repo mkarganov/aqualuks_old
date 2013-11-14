@@ -1,6 +1,8 @@
 .product-pack.view.view-first
-  = image_tag(product.product_images.first.image_url)
+  = image_tag(product.product_images.first.image_url(:thumb))
+  .price
+    p= link_to number_to_currency(product.price), add_to_cart_product_path(product), remote: true
   .mask
-    h3 = link_to product.name, product_path(product)
-    p= truncate(product.description, length: 200)
-    =link_to 'Add To Cart', add_to_cart_product_path(product), class: 'info', remote: true
+    h3 = truncate(product.name, length: 25)
+    /* p= truncate(product.description, length: 200) */
+    =link_to 'Details', product_path(product), class: 'info'

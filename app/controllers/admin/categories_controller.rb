@@ -1,8 +1,10 @@
 class Admin::CategoriesController < AdminApplicationController
 
-  before_filter :find_category, only: [:edit, :update, :destroy]
+  before_action :find_category, only: [:edit, :update, :destroy]
+  # before_action :sub_categories, only: [:new, :edit]
+
   def index
-    @categories = Category.all
+    @main_categories = Category.where(parent_id: nil)
   end
 
   def new
@@ -14,6 +16,10 @@ class Admin::CategoriesController < AdminApplicationController
     redirect_to admin_categories_path
   end
 
+  def edit
+    @categories = Category.all
+  end
+
   def update
     if @category.update(category_params)
       redirect_to admin_categories_path
@@ -23,7 +29,7 @@ class Admin::CategoriesController < AdminApplicationController
   end
 
   def destroy
-    @category.delete
+    @category.destroy
 
     redirect_to admin_categories_path
   end
@@ -31,10 +37,14 @@ class Admin::CategoriesController < AdminApplicationController
   private
 
   def category_params
-    params.require(:category).permit(:title)
+    params.require(:category).permit(:title, sub_category_ids: [])
   end
 
   def find_category
     @category  = Category.find(params[:id])
   end
+
+  # def sub_categories #TODO Refactor to use sql query
+  #   @categories = Category.all.reject{ |cat| cat.parent_id? || cat.sub_categories.present? }
+  # end
 end

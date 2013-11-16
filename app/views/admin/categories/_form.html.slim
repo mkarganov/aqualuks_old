@@ -1,3 +1,4 @@
 =simple_form_for [:admin, @category] do |f|
   =f.input :title, label: t('.category_title')
   =f.button :submit, label: t('.create_category')
+  =f.association :sub_categories, as: :check_boxes, collection: Category.all

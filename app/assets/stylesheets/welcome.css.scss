@@ -10,6 +10,7 @@
 // }
 
 .view {
+    background-color: white;
     width: 248px;
     height: 180px;
     margin: 5px;
@@ -147,4 +148,119 @@
   height: 50px;
   margin-right: auto;
   margin-left: auto;
+}
+
+#menu {
+  height: 100px;
+  background-color: #006CC0;
+
+  nav {
+    padding-top: 10px;
+    text-align: center;
+    a.menu-item {
+      position: relative;
+      display: inline-block;
+      margin: 15px 25px;
+      outline: none;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 400;
+      text-shadow: 0 0 1px rgba(255,255,255,0.3);
+      font-size: 1.35em;
+    }
+  }
+
+  nav a.menu-item:hover,
+  nav a.menu-item:focus {
+    color: white;
+    outline: none;
+    text-decoration: none;
+  }
+  /* Effect 9: second text and borders */
+  .main-menu a.menu-item {
+    margin: 0 20px;
+    padding: 18px 20px;
+  }
+
+  .main-menu a.menu-item::before,
+  .main-menu a.menu-item::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    content: '';
+    opacity: 0.2;
+    -webkit-transition: opacity 0.3s, height 0.3s;
+    -moz-transition: opacity 0.3s, height 0.3s;
+    transition: opacity 0.3s, height 0.3s;
+  }
+
+  .main-menu a.menu-item::after {
+    top: 100%;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  .main-menu a.menu-item span:first-child {
+    z-index: 2;
+    display: block;
+    font-weight: 300;
+  }
+
+  .main-menu a.menu-item span:last-child {
+    z-index: 1;
+    display: block;
+    padding: 8px 0 0 0;
+    color: rgba(0,0,0,0.4);
+    text-shadow: none;
+    text-transform: none;
+    font-style: italic;
+    font-size: 0.75em;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    opacity: 0;
+    -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+    -moz-transition: -moz-transform 0.3s, opacity 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+
+  .main-menu a.menu-item:hover::before,
+  .main-menu a.menu-item:focus::before {
+    height: 6px;
+  }
+
+  .main-menu a.menu-item:hover::before,
+  .main-menu a.menu-item:hover::after,
+  .main-menu a.menu-item:focus::before,
+  .main-menu a.menu-item:focus::after {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+
+  .main-menu a.menu-item:hover span:last-child,
+  .main-menu a.menu-item:focus span:last-child {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    -moz-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+
+  .dropmenu {
+    background-color: black;
+    position: absolute;
+    display: none;
+  }
 }

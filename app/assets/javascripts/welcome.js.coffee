@@ -3,3 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $('.carousel').carousel( interval: false )
+
+  # $(document).on 'click', '#menu a', (e)->
+  #   (e).preventDefault()
+  #   $('.dropmenu').toggle()

@@ -1,14 +1,3 @@
-// .product-pack {
-//   background: white;
-//   border: 1px solid #8a46be;
-//   float: left;
-//   height: 150px;
-//   list-style: none;
-//   padding: 10px;
-//   margin: 0 10px 10px 0;
-//   width: 248px;
-// }
-
 .view {
     background-color: white;
     width: 248px;
@@ -155,6 +144,7 @@
   background-color: #006CC0;
 
   nav {
+    ul { ul {display:none;}}
     padding-top: 10px;
     text-align: center;
     a.menu-item {
@@ -178,7 +168,6 @@
     outline: none;
     text-decoration: none;
   }
-  /* Effect 9: second text and borders */
   .main-menu a.menu-item {
     margin: 0 20px;
     padding: 18px 20px;
@@ -259,8 +248,46 @@
   }
 
   .dropmenu {
-    background-color: black;
-    position: absolute;
     display: none;
+    float: left;
+    width: 100%;
+    max-width: 200px;
+    background: #aaa;
+    padding: 0;
+    position: absolute;
+    margin-left: 20px;
+    list-style: none;
+    z-index: 1;
+    background: #006CC0;
+    li:hover > ul { display: block; }
+
+    ul {
+      list-style: none;
+      margin-left: 0;
+      background: #006CC0;
+      position: absolute; left: 100%; top:0;
+      max-width: 200px;
+      width: 100%;
+    }
+
+    a {
+      display: block;
+      position: relative;
+      padding: 15px 20px;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 300;
+      color: #fff;
+      border-top: solid 1px;
+      text-decoration: none;
+      outline: none;
+      &:hover {
+        background: rgba(255,248,213,0.1);
+      }
+      &:after {
+        right: 10px;
+        color: rgba(0,0,0,0.15);
+      }
+    }
   }
 }

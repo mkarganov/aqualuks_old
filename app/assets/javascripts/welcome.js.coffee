@@ -1,9 +1,14 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
   $('.carousel').carousel( interval: false )
 
-  # $(document).on 'click', '#menu a', (e)->
-  #   (e).preventDefault()
-  #   $('.dropmenu').toggle()
+  $(document).on 'click', '#menu li', (e)->
+    (e).preventDefault()
+    unless $(e.target).parents('li').find('ul.dropmenu').css('display') == 'block'
+      $('.dropmenu').slideUp()
+    $(@).find('.dropmenu').slideToggle()
+  $(document).click( (e)->
+    if $(e.target).parents('#menu').is($('#menu'))
+      return false
+    else
+      $('.dropmenu').slideUp()
+  )

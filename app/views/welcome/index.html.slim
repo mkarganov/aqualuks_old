@@ -6,17 +6,28 @@
         a.menu-item href="#"
           span Gossamer
           span Sumptuous Heart
-        /* ul.dropmenu */
-        /*   li */
-        /*     = link_to 'Category 1', '#' */
-        /*   li */
-        /*     = link_to 'Category 1', '#' */
-        /*   li */
-        /*     = link_to 'Category 1', '#' */
+        ul.dropmenu
+          li
+            = link_to 'Category 1', '#'
+            ul.subcat
+              li= link_to 'Sub Category 1', '#'
+              li= link_to 'Sub Category 1', '#'
+              li= link_to 'Sub Category 1', '#'
+          li
+            = link_to 'Category 1', '#'
+          li
+            = link_to 'Category 1', '#'
       li
         a.menu-item href="#"
           span Ineffabl
           span Evanescent Life
+        ul.dropmenu
+          li
+            = link_to 'Category 1', '#'
+            ul.subcat
+              li= link_to 'Sub Category 1', '#'
+              li= link_to 'Sub Category 1', '#'
+              li= link_to 'Sub Category 1', '#'
       li
         a.menu-item href="#"
           span Chatoyant

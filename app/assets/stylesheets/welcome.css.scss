@@ -133,10 +133,60 @@
 }
 
 #full-catalog {
-  width: 300px;
-  height: 50px;
+
+  .btn-2d {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 140px;
+    display: inline-block;
+    // margin: 15px 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+
+
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      -webkit-transition: all 0.3s;
+      -moz-transition: all 0.3s;
+      transition: all 0.3s;
+    }
+    background: #cb4e4e;
+    color: #fff;
+    box-shadow: 0 6px #ab3c3c;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    border-radius: 5px;
+
+
+    &:hover {
+      box-shadow: 0 8px #ab3c3c;
+      top: -2px;
+    }
+
+    &:active {
+      box-shadow: 0 0 #ab3c3c;
+      top: 6px;
+    }
+  }
+  width: 440px;
+  height: 60px;
   margin-right: auto;
   margin-left: auto;
+  a:hover { text-decoration: none; color: white;}
 }
 
 #menu {
@@ -258,13 +308,15 @@
     margin-left: 20px;
     list-style: none;
     z-index: 1;
-    background: #006CC0;
+    // background: #006CC0;
+    background: rgba(0,113,204,0.8);
     li:hover > ul { display: block; }
 
     ul {
       list-style: none;
       margin-left: 0;
-      background: #006CC0;
+      // background: #006CC0;
+      background: rgba(0,113,204,0.8);
       position: absolute; left: 100%; top:0;
       max-width: 200px;
       width: 100%;
@@ -281,6 +333,7 @@
       border-top: solid 1px;
       text-decoration: none;
       outline: none;
+      border-bottom: 1px #003159 solid;
       &:hover {
         background: rgba(255,248,213,0.1);
       }
@@ -291,3 +344,4 @@
     }
   }
 }
+/* Button 2d */

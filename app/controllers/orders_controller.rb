@@ -19,6 +19,7 @@ class OrdersController < ApplicationController
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
+      OrderMailer.complete_order(@order).deliver
       redirect_to root_path
     else
       render :edit
@@ -34,6 +35,8 @@ class OrdersController < ApplicationController
     session[:cart] = []
     redirect_to root_path
   end
+
+  private
 
   def order_params
     params.require(:order).permit(:customer_name, :address, :phone, :comment, order_products_attributes: [:product_id, :quantity])

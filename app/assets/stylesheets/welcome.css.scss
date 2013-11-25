@@ -141,10 +141,9 @@
     color: inherit;
     background: none;
     cursor: pointer;
-    padding: 25px 140px;
+    padding: 25px 80px;
     display: inline-block;
-    // margin: 15px 30px;
-    text-decoration: none;
+    margin: 15px 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
@@ -154,7 +153,6 @@
     -moz-transition: all 0.3s;
     transition: all 0.3s;
 
-
     &:after {
       content: '';
       position: absolute;
@@ -163,27 +161,39 @@
       -moz-transition: all 0.3s;
       transition: all 0.3s;
     }
-    background: #cb4e4e;
-    color: #fff;
-    box-shadow: 0 6px #ab3c3c;
-    -webkit-transition: none;
-    -moz-transition: none;
-    transition: none;
-    border-radius: 5px;
-
-
-    &:hover {
-      box-shadow: 0 8px #ab3c3c;
-      top: -2px;
+    border: 3px solid #006CC0;
+    color: #006CC0;
+    overflow: hidden;
+    &:after {
+      width: 101%;
+      height: 0;
+      top: 50%;
+      left: 50%;
+      background: #006CC0;
+      opacity: 0;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      -moz-transform: translateX(-50%) translateY(-50%);
+      -ms-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
     }
 
+    &:hover,
     &:active {
-      box-shadow: 0 0 #ab3c3c;
-      top: 6px;
+      color: white;
+    }
+
+    &:hover:after {
+      height: 75%;
+      opacity: 1;
+    }
+
+    &:active:after {
+      height: 130%;
+      opacity: 1;
     }
   }
-  width: 440px;
-  height: 60px;
+  width: 370px;
+  height: 105px;
   margin-right: auto;
   margin-left: auto;
   a:hover { text-decoration: none; color: white;}

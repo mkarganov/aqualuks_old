@@ -1,4 +1,4 @@
 .row-fluid
   - @products.each_slice(4) do |products|
-    = render partial: 'welcome/product', collection: products
+    = render partial: 'shared/product', collection: products
 = paginate @products, remote: true

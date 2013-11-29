@@ -8,13 +8,11 @@
             =link_to '#', remote: true do
               =image_tag(image.image_url(:thumb))
   .span7
+    h2= @product.name
     .row-fluid
-      h2= @product.name
-      .span4
-        ul.well.inline
-          li= number_to_currency(@product.price)
-          li=link_to t('.add_to_cart'), add_to_cart_product_path(@product), class: 'btn', remote: true
-      .span3
+      .span4#price= number_to_currency(@product.price)
+      .span8#add-to-cart=link_to add_to_cart_product_path(@product), class: 'btn-add btn-5 btn-5a icon-cart', remote: true do
+            span= t('.add_to_cart')
     ul.nav.nav-tabs
       li.active
         a href='#' Description
@@ -29,3 +27,6 @@
       - @product.product_images.each do |image|
         li.slide-glide
           = image_tag(image.image_url)
+/* #add-to-cart=link_to add_to_cart_product_path(@product), class: 'btn-add btn-5 btn-5a icon-cart' do */
+  span= t('.add_to_cart')
+

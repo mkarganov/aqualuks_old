@@ -3,7 +3,7 @@
   .product-actions
     .product-info
       .info-block
-        .product-title= truncate(product.name, length: 25)
+        .product-title= link_to truncate(product.name, length: 25), product_path(product)
         .product-description= truncate(product.description, length: 80)
         .product-price= number_to_currency(product.price)
         .button-buy= link_to 'Add to Cart', add_to_cart_product_path(product), remote: true

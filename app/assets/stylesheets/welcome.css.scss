@@ -1,12 +1,16 @@
 .carousel {
-  padding-left: 7px;
-  .carousel-control {
-    left: -37px;
+  .item {
+    margin-left: 29px;
   }
-  .carousel-control.right {
+  .carousel-control {
     margin-top: 0;
-    left: auto;
-    right: -41px;
+  }
+  .left {
+    left: -15px;
+  }
+
+  .right {
+    right: -15px;
   }
 }
 
@@ -198,7 +202,7 @@
     position: absolute;
     margin-left: 20px;
     list-style: none;
-    z-index: 1;
+    z-index: 3;
     // background: #006CC0;
     background: rgba(0,113,204,0.8);
     li:hover > ul { display: block; }

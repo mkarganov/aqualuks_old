@@ -7,6 +7,7 @@ Octopus::Application.routes.draw do
   resource :catalogue, only: [:show]
   resources :orders do
     get 'empty_cart', on: :collection
+    get 'remove', on: :member
   end
   resources :products, only: [:show] do
     get 'add_to_cart', on: :member

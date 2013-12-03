@@ -26,13 +26,19 @@ class OrdersController < ApplicationController
     end
   end
 
-  def destroy
+  def remove
     @id = params[:id]
     session[:cart].delete(@id)
   end
 
   def empty_cart
     session[:cart] = []
+    redirect_to root_path
+  end
+
+  def destroy
+    @order = Order.find(params[:id])
+    @order.destroy
     redirect_to root_path
   end
 

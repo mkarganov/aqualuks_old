@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
   skip_before_filter :require_email
-  before_filter :find_user
+  before_filter :find_user, only: [:update, :edit]
 
-  def new
-    @user = env['omniauth.identity'] ||= User.new
-  end
+  # def new
+  #   @user = env['omniauth.identity'] ||= User.new
+  # end
 
   def update
     if @user and @user.update_attributes(user_params)
@@ -22,7 +22,11 @@ class UsersController < ApplicationController
   end
 
   def find_user
-    @user = User.find_by_id(params[:id])
+    if current_user
+      @user = current_user
+    else
+      @user = User.find_by_id(params[:id])
+    end
   end
 
 end

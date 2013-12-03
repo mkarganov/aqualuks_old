@@ -1,6 +1,6 @@
 Octopus::Application.routes.draw do
-  get "catalogues_controller/index"
   get "welcome/index"
+  get 'my_account', to: 'users#edit'
 
   resources :users, only: [:update, :edit]
   resource :session

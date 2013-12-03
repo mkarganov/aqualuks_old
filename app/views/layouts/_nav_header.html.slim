@@ -15,7 +15,7 @@
             li=link_to new_order_path, remote: true do
               #count_cart= pluralize(session[:cart].count, 'item') if session[:cart]
             - if current_user
-              li.navbar-text= "Welcome, #{current_user.name}"
+              li= link_to "Welcome, #{current_user.name}", my_account_path
               li= link_to t('.logout'), session_path, method: :delete
             - else
               li.navbar-text= t('.login_with')

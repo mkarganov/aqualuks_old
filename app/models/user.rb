@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   has_many :authorizations, dependent: :destroy
+  has_many :orders
 
   def self.create_with_omniauth(auth)
     create(name: auth['info']['name'], email: auth['info']['email'])

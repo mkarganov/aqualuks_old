@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_email
-    if current_user && current_user.email.nil?
+    if current_user && current_user.email.present?
       redirect_to edit_user_path(current_user)
     end
   end

@@ -17,8 +17,9 @@ class OrdersController < ApplicationController
 
   def update
     if @order.update(order_params)
-      OrderMailer.complete_order(@order).deliver
-      redirect_to root_path
+      OrderMailer.admin_order_notification.deliver
+      # OrderMailer.user_order_notification(@order).deliver
+      session[:cart] = []
     else
       render :edit
     end
@@ -42,7 +43,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:customer_name, :address, :phone, :comment, order_products_attributes: [:product_id, :quantity])
+    params.require(:order).permit(:customer_name, :address, :phone, :email, :comment, order_products_attributes: [:product_id, :quantity])
   end
 
   def find_order

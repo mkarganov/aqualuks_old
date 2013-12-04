@@ -1,8 +1,8 @@
 .form= simple_form_for @order do |f|
-  =f.input :customer_name
-  =f.input :address
-  =f.input :email, input_html: { value: @order.user.email }
-  =f.input :phone
+  =f.input :customer_name, input_html: { value: @order.user.name } if current_user
+  =f.input :address, input_html: { value: @order.user.address} if current_user
+  =f.input :email, input_html: { value: @order.user.email } if current_user
+  =f.input :phone, input_html: { value: @order.user.phone } if current_user
   =f.input :comment
   =f.button :submit
   =link_to 'Cancel', order_path(@order), method: :delete, class: 'btn'

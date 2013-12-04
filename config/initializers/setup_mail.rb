@@ -1,9 +1,9 @@
 ActionMailer::Base.smtp_settings = {
   :address              => "smtp.gmail.com",
   :port                 => 587,
-  :domain               => "app.com",
-  :user_name            => "admin",
-  :password             => "secret",
+  :domain               => "octopus-marketplace.com",
+  :user_name            => "octopus.marketplace@gmail.com",
+  :password             => "h92pcs77",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }

@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def update
     if @user and @user.update_attributes(user_params)
+      flash[:notice] = "success!"
       redirect_to root_url
     else
       render 'edit'
@@ -18,7 +19,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :address, :phone)
   end
 
   def find_user

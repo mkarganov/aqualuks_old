@@ -8,6 +8,13 @@ html
   body
     = render partial: 'layouts/nav_header'
     .container
+      - flash.each do |name, msg|
+        - if msg.is_a?(String)
+          div class="alert-#{name == :notice ? "success" : "error"}"
+            .container.text-center.message
+              a.close data-dismiss="alert" ×
+              = content_tag :div, msg, id: "flash_#{name}"
       = yield
   #Modal class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
-    button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;
+    button type="button" class="close" data-dismiss="modal" aria-hidden="true" ×
+

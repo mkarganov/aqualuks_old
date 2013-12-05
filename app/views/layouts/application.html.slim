@@ -7,7 +7,7 @@ html
     = csrf_meta_tags
   body
     = render partial: 'layouts/nav_header'
-    .container
+    .container-fluid
       - flash.each do |name, msg|
         - if msg.is_a?(String)
           div class="alert-#{name == :notice ? "success" : "error"}"

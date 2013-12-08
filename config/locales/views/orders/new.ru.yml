@@ -1,0 +1,11 @@
+ru:
+  orders:
+    cart:
+      image: Изображение
+      name: Имя
+      quantity: Количество
+      price: Цена
+      remove: Убрать
+      total_price: Общая стоимость
+      checkout: Оформить заказ
+      empty_cart: Очистить корзину

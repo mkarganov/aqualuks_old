@@ -6,6 +6,7 @@
   =require twitter-bootstrap-static/fontawesome
   */
 .container-fluid {
+  margin: 0 auto;
   width: 1170px;
 }
 

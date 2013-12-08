@@ -1,0 +1,11 @@
+ru:
+  admin:
+    categories:
+      index:
+        manage_categories: Управлять Категориями
+        add_new_category: Добавить новую категорию
+        category_name: Категории
+        sub_category_name: Подкатегории
+      form:
+        category_title: Название Категории
+        create_category: Создать Категорию

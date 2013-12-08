@@ -1,0 +1,10 @@
+ru:
+  layouts:
+    nav_header:
+      login_with: Войти с помощью
+      logout: Выйти
+    nav_footer:
+      contact_us: Связаться с нами
+      delivery: Доставка
+      how_to_buy: Как купить?
+      leave_testimonial: Оставить отзыв

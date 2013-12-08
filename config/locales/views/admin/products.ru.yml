@@ -1,0 +1,24 @@
+ru:
+  admin:
+    products:
+      index:
+        manage_products: Управлять Продуктами
+        image: Изображение
+        name: Имя
+        description: Описание
+        price: Цена
+        actions: Действия
+        add_new_product: Добавить новый продукт
+      new:
+        new_product: Новый Продукт
+      edit:
+        edit_product: Редактировать Продукт
+      form:
+        name: Имя
+        description: Описание
+        price: Цена
+        categories: Категории
+        add_image: Добавить Изображение
+        create_product: Создать Продукт
+      image:
+        image: Изображение

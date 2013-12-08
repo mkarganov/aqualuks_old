@@ -1,0 +1,6 @@
+ru:
+  layouts:
+    admin:
+      admin_dashboard_title: Администратор Сайта
+      products: Продукты
+      categories: Категории

@@ -1,0 +1,7 @@
+ru:
+  catalogues:
+    catalogue_menu:
+      nameasc: Сортировать по имени
+      priceasc: Сначала дешевые
+      pricedesc: Сначала дорогие
+      created_atdesc: По дате публикации

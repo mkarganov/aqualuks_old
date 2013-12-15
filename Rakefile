@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Octopus::Application.load_tasks
+Aqualuks::Application.load_tasks

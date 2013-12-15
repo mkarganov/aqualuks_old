@@ -21,4 +21,4 @@ def secure_token
     token
   end
 end
-Octopus::Application.config.secret_key_base = secure_token
+Aqualuks::Application.config.secret_key_base = secure_token

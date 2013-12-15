@@ -1,105 +1,116 @@
-//Styles for product box view
-//TODO refactor to scss syntax
-.product, .product-img{
-  width: 260px;
-  height: 260px;
-  float: left;
-  position:relative;
-  -webkit-transition:.7s;
-  -moz-transition:.7s;
-  -o-transition:.7s;
-  transition:.7s;
-}
-.product-actions{
-  top: 125px;
-  width: 260px;
-  height: 135px;
-  position: absolute;
-  overflow:hidden;
-  // margin-top:-263px;
-  -webkit-transition:.7s;
-  -moz-transition:.7s;
-  -o-transition:.7s;
-  transition:.7s;
-  z-index:2;
-}
-.product{
-  border: 5px solid #E7F0F7;
-  margin: 4px;
-  -webkit-box-shadow:0px 2px 2px rgba(0,0,0,0.3);
-  -moz-box-shadow:0px 2px 2px rgba(0,0,0,0.3);
-  box-shadow:0px 2px 2px rgba(0,0,0,0.3);
-  background:#000;
-}
-.info-block, .product-title, .product-description, .product-price, .button-buy {
-  position:absolute;
-  z-index:3;
-}
-.info-block{
-  height:130px;
-  width:260px;
-  background:rgba(255,255,255,.85);
-  bottom:0px;
-  margin-bottom:-70px;
-  -webkit-transition:.7s;
-  -moz-transition:.7s;
-  -o-transition:.7s;
-  transition:.7s;
-}
-.product-title{
-  color:#222;
-  font-size:1em;
-  font-weight:400;
-  top:12px;
-  left:15px;
-}
-.product-description{
-  width:228px;
-  top:32px;
-  left:16px;
-  line-height: 1;
-  font-family:'helvetica neue';
-  font-size:0.8em;
-  font-weight:400;
-  color:#7d7d7d;
-  border-bottom:1px solid #dadada;
-  padding-bottom:9px;
-}
-.product-price{
-  color:#e74c3c;
-  font-size:1em;
-  font-weight:700;
-  font-family:'helvetica neue';
-  right:15px;
-  top:12px;
-}
+.product {
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
 
-.button-buy {
-  background:#34A325;
-  margin:0 auto;
-  text-align:center;
-  line-height:46px;
-  font-weight:700;
-  border:0px solid #34A325;
-  border-bottom-width:2px;
-  width:100%;
-  height:44px;
-  bottom:15px;
-  cursor:pointer;
-  -webkit-transition:.4s;
-  -moz-transition:.4s;
-  -o-transition:.4s;
-  transition:.4s;
-
-  a {
-    text-decoration: none;
-    color: #fff;
-  }
-  &:hover{
-    background:#15CF0D;
+  &:hover {
+    border: 1px solid #aaa;
+    cursor: pointer;
   }
 }
+// //Styles for product box view
+// //TODO refactor to scss syntax
+// .product, .product-img{
+//   width: 260px;
+//   height: 260px;
+//   float: left;
+//   position:relative;
+//   -webkit-transition:.7s;
+//   -moz-transition:.7s;
+//   -o-transition:.7s;
+//   transition:.7s;
+//   img { width: 260px; }
+// }
+// .product-actions{
+//   top: 125px;
+//   width: 260px;
+//   height: 135px;
+//   position: absolute;
+//   overflow:hidden;
+//   // margin-top:-263px;
+//   -webkit-transition:.7s;
+//   -moz-transition:.7s;
+//   -o-transition:.7s;
+//   transition:.7s;
+//   z-index:2;
+// }
+// .product{
+//   border: 5px solid #E7F0F7;
+//   margin: 4px;
+//   -webkit-box-shadow:0px 2px 2px rgba(0,0,0,0.3);
+//   -moz-box-shadow:0px 2px 2px rgba(0,0,0,0.3);
+//   box-shadow:0px 2px 2px rgba(0,0,0,0.3);
+//   background:#000;
+// }
+// .info-block, .product-title, .product-description, .product-price, .button-buy {
+//   position:absolute;
+//   z-index:3;
+// }
+// .info-block{
+//   height:130px;
+//   width:260px;
+//   background:rgba(255,255,255,.85);
+//   bottom:0px;
+//   margin-bottom:-70px;
+//   -webkit-transition:.7s;
+//   -moz-transition:.7s;
+//   -o-transition:.7s;
+//   transition:.7s;
+// }
+// .product-title{
+//   color:#222;
+//   font-size:1em;
+//   font-weight:400;
+//   top:12px;
+//   left:15px;
+// }
+// .product-description{
+//   width:228px;
+//   top:32px;
+//   left:16px;
+//   line-height: 1;
+//   font-family:'helvetica neue';
+//   font-size:0.8em;
+//   font-weight:400;
+//   color:#7d7d7d;
+//   border-bottom:1px solid #dadada;
+//   padding-bottom:9px;
+// }
+// .product-price{
+//   color:#e74c3c;
+//   font-size:1em;
+//   font-weight:700;
+//   font-family:'helvetica neue';
+//   right:15px;
+//   top:12px;
+// }
 
-.product:hover .info-block{
-  margin-bottom:0;
-}
+// .button-buy {
+//   background:#34A325;
+//   margin:0 auto;
+//   text-align:center;
+//   line-height:46px;
+//   font-weight:700;
+//   border:0px solid #34A325;
+//   border-bottom-width:2px;
+//   width:100%;
+//   height:44px;
+//   bottom:15px;
+//   cursor:pointer;
+//   -webkit-transition:.4s;
+//   -moz-transition:.4s;
+//   -o-transition:.4s;
+//   transition:.4s;
+
+//   a {
+//     text-decoration: none;
+//     color: #fff;
+//   }
+//   &:hover{
+//     background:#15CF0D;
+//   }
+// }
+
+// .product:hover .info-block{
+//   margin-bottom:0;
+// }

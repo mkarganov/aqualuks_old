@@ -1,13 +1,17 @@
-.product
-  =link_to product_path(product) do
-    .product-img= image_tag(product.product_images.first.image_url)
-  .product-actions
-    .info-block
-      .product-title= link_to truncate(product.name, length: 25), product_path(product)
-      .product-description= truncate(product.description, length: 80)
-      .product-price= number_to_currency(product.price)
-      .button-buy= link_to 'Add to Cart', add_to_cart_product_path(product), remote: true
-  /* p= link_to number_to_currency(product.price), add_to_cart_product_path(product), remote: true */
-  /* h3 = truncate(product.name, length: 25) */
-  /* p= truncate(product.description, length: 200) */
-  /* =link_to 'Details', product_path(product), class: 'info'e */
+/* .product */
+/*   =link_to product_path(product) do */
+/*     .product-img= image_tag(product.product_images.first.image_url) */
+/*   .product-actions */
+/*     .info-block */
+/*       .product-title= link_to truncate(product.name, length: 25), product_path(product) */
+/*       .product-description= truncate(product.description, length: 80) */
+/*       .product-price= number_to_currency(product.price) */
+/*       .button-buy= link_to 'Add to Cart', add_to_cart_product_path(product), remote: true */
+
+#productView
+  .product.span3
+     .product-image= image_tag(product.product_images.first.image_url)
+     h3.product-name= link_to truncate(product.name, length: 25), product_path(product)
+     p.product-description= truncate(product.description.html_safe, length: 80)
+     p.product-price= number_to_currency(product.price)
+     p=link_to t('.add_to_cart'), add_to_cart_product_path(product), remote: true, class: "btn btn-primary"

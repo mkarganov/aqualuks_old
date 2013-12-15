@@ -1,4 +1,4 @@
-Octopus::Application.routes.draw do
+Aqualuks::Application.routes.draw do
   get "welcome/index"
   get 'my_account', to: 'users#edit'
 

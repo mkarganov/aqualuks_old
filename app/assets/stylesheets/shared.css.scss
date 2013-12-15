@@ -1,11 +1,20 @@
 .product {
+  background: white;
   padding: 10px;
   margin-top: 20px;
+  margin-left: 15px;
   border: 1px solid #ddd;
+  height: 330px;
+  width: 237px;
+  float: left;
 
   &:hover {
     border: 1px solid #aaa;
     cursor: pointer;
+  }
+  .product-image img {
+    height: 190px;
+    width: 240px;
   }
 }
 // //Styles for product box view

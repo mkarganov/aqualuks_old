@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
 
   validates :customer_name, :address, :phone, presence: true
 
-  def set_status_and_calcualte_total
+  def set_status_and_calculate_total
     self.status = 'pending'
     self.total = self.order_products.map(&:price).inject(:+)
   end

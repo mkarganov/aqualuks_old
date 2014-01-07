@@ -14,4 +14,4 @@
     h4.product-name= link_to truncate(product.name, length: 25), product_path(product)
     p.product-description.pull-left= truncate(product.description.html_safe, length: 80)
     p.product-price.pull-right= number_to_currency(product.price)
-    p=link_to t('.add_to_cart'), add_to_cart_product_path(product), remote: true, class: "btn btn-primary"
+    p=link_to t('.add_to_cart'), add_to_cart_product_path(product, price: product.price), remote: true, class: "btn btn-primary"

@@ -1,3 +1,115 @@
+#header {
+  width: 100%;
+  height: 200px;
+  background:  url('/assets/2.1_c.jpg') rgb(56, 188, 236);
+
+  img {
+    float: left;
+    width: 350px;
+    height: 125px;
+    margin: 30px 0 0 25px;
+  }
+  .contacts {
+    float: left;
+    margin: 30px 0 0 40px;
+    color: #272631;
+    font-weight: 900;
+    ul {
+      font-size: 25px;
+      li { padding: 5px; }
+    }
+  }
+  .social {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .icon {
+    img {
+      width:37px;
+      height:37px;
+      margin: 0;
+      padding-right: 5px
+    }
+    display: inline;
+  }
+  .skype { margin-top: -7px !important;}
+  .login {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    color: #587588;
+    .login-icon {
+      display: inline-block;
+      -webkit-transition: all 0.1s linear;
+      padding: 0 4px;
+      font-size: 18px;
+      &:hover { -webkit-transform: scale(1.6); }
+      a {
+        text-decoration: none;
+        color: #ECB203;
+        &:hover { text-decoration: none;}
+      }
+    }
+  }
+  #cart {
+    overflow: hidden;
+    float: right;
+    width: 450px;
+    height: 60px;
+    margin: 20px 7px;
+    border: 1px solid black;
+    font-weight: 600;
+    .hide-cart-content { bottom: 0px}
+    .show-cart-content { bottom: 0px}
+  }
+  #empty_cart {
+    bottom: 60px;
+    position: relative;
+    line-height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 17px;
+  }
+  #full_cart {
+    z-index: 2;
+    bottom: 60px;
+    position: relative;
+    .items {
+      float: left;
+      width: 33%;
+      height: 60px;
+      border-right: 1px solid black;
+      font-size: 15px;
+      ul { margin-top: 17px; }
+      i {
+        font-size: 27px;
+        vertical-align: sub;
+      }
+    }
+    .total { border-right: 1px solid black; }
+    .total, .cart-link {
+      width: 33.28%;
+      height: 100%;
+      font-size: 26px;
+      text-align: center;
+      line-height: 60px;
+      vertical-align: middle;
+      float: left;
+    }
+    .cart-link {
+      a {
+        color: white;
+        &:hover {
+          text-decoration: none;
+          color: white;
+        }
+      }
+      background: #006CC0;
+    }
+  }
+}
+
 .carousel {
   .item {
     margin-left: 29px;
@@ -64,6 +176,7 @@
     &:hover,
     &:active {
       color: white;
+      z-index: 1;
     }
 
     &:hover:after {

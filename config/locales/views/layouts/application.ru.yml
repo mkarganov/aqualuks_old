@@ -1,8 +1,12 @@
 ru:
   layouts:
-    nav_header:
-      login_with: Войти с помощью
+    header:
+      login_with: 'Войти/создать профиль:'
       logout: Выйти
+      in_cart: 'В корзине:'
+      currency: ' грн'
+      to_cart: В корзину!
+      empty_cart: Ваша корзина еще не наполнена
     nav_footer:
       contact_us: Связаться с нами
       delivery: Доставка

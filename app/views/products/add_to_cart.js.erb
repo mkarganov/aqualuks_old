@@ -1,0 +1,6 @@
+$('#full_cart .items li:last').text(<%= session[:cart].count %>)
+$('#full_cart .total span').text(<%= session[:cart_total] %>)
+<% if @first_item %>
+  $('#empty_cart').animate({bottom: '0px'})
+  $('#full_cart').animate({bottom: '0px'})
+<% end %>

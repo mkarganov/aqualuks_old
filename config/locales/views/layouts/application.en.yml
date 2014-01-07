@@ -1,6 +1,6 @@
 en:
   layouts:
-    nav_header:
+    header:
       login_with: Login With
       logout: Log Out
     nav_footer:

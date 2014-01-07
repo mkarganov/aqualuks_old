@@ -6,8 +6,9 @@ html
     = javascript_include_tag "application", "data_turbolinks-track" => true
     = csrf_meta_tags
   body
-    = render partial: 'layouts/nav_header'
+    <!-- = render partial: 'layouts/nav_header' -->
     .container-fluid
+      = render partial: 'layouts/header'
       - flash.each do |name, msg|
         - if msg.is_a?(String)
           div class="alert-#{name == :notice ? "success" : "error"}"

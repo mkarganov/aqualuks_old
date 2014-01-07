@@ -37,6 +37,7 @@ class OrdersController < ApplicationController
 
   def empty_cart
     session[:cart] = []
+    session[:cart_total] = 0
     redirect_to root_path
   end
 

@@ -35,6 +35,7 @@ class ApplicationController < ActionController::Base
 
   def setup_cart
     session[:cart] ||= []
+    session[:cart_total] ||= 0
   end
 
 end

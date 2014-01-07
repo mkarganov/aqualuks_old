@@ -1,0 +1,83 @@
+#header
+  = link_to image_tag('logo.png'), root_path
+  .contacts
+    .social
+      .icon=link_to image_tag('vk.png'), '#'
+      .icon=link_to image_tag('gplus.png'), '#'
+      .icon=link_to image_tag('facebook.png'), '#'
+    span Профессиональная консультация
+    ul.unstyled
+      li +38-0472-56-96-99
+      li +38-097-293-54-57
+      li
+        .icon= image_tag('skype.png', class: 'skype')
+        span aqualuks
+  .login.pull-right
+    - if current_user
+      = link_to "Welcome, #{current_user.name}", my_account_path
+      = link_to t('.logout'), session_path, method: :delete
+    - else
+      span= t('.login_with')
+      .login-icon
+        a href='/auth/vkontakte/'
+          i class='icon-vk'
+      .login-icon
+        a href='/auth/facebook/'
+          i class='icon-facebook'
+  #cart
+    = content_tag(:div, id: 'full_cart', class: ('show-cart-content' if session[:cart].count > 0)) do
+      .items
+        ul.inline
+          li
+            i class='icon-shopping-cart'
+          li= t('.in_cart')
+          li= session[:cart].count if session[:cart]
+      .total
+        span= "#{session[:cart_total]}"
+        = t('.currency')
+      .cart-link
+        = link_to t('.to_cart'), new_order_path, remote: true
+    =content_tag(:div, id: 'empty_cart', class: ('hide-cart-content' if session[:cart].count > 0)) do
+      = t('.empty_cart')
+#menu
+  nav class="main-menu" id="main-menu"
+    ul.inline
+      li
+        a.menu-item href="#"
+          span Для дома
+          span Забота о здоровье
+        ul.dropmenu
+          li
+            = link_to 'Кухонные фильтры', '#'
+            ul.subcat
+              li= link_to 'Филтры на кран', '#'
+              li= link_to 'Настольные фильтры', '#'
+              li= link_to 'Фильтры под кухонную мойку', '#'
+          li
+            = link_to 'Системы обратного осмоса', '#'
+          li
+            = link_to 'Category 1', '#'
+      li
+        a.menu-item href="#"
+          span Промышленные
+          span Лучшая очистка
+        ul.dropmenu
+          li
+            = link_to 'Category 1', '#'
+            ul.subcat
+              li= link_to 'Sub Category 1', '#'
+              li= link_to 'Sub Category 1', '#'
+              li= link_to 'Sub Category 1', '#'
+      li
+        a.menu-item href="#"
+          span Chatoyant
+          span Assemblage Love
+      li
+        a.menu-item href="#"
+          span Mellifluous
+          span Mellifluous Will
+      li
+        a.menu-item href="#"
+          span Распродажа
+          span Акции и скидки
+

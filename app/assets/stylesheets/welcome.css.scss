@@ -1,17 +1,20 @@
 #header {
-  width: 100%;
-  height: 200px;
+  width: 1170px;
+  height: 170px;
+  margin-top: -10px;
+  position: fixed;
   background:  url('/assets/2.1_c.jpg') rgb(56, 188, 236);
+  z-index: 3;
 
   img {
     float: left;
     width: 350px;
     height: 125px;
-    margin: 30px 0 0 25px;
+    margin: 20px 0 0 25px;
   }
   .contacts {
     float: left;
-    margin: 30px 0 0 40px;
+    margin: 10px 0 0 40px;
     color: #272631;
     font-weight: 900;
     ul {
@@ -53,6 +56,7 @@
     }
   }
   #cart {
+    background: rgba(37, 122, 231, 0.41);
     overflow: hidden;
     float: right;
     width: 450px;
@@ -70,6 +74,7 @@
     text-align: center;
     vertical-align: middle;
     font-size: 17px;
+    font-weight: 800;
   }
   #full_cart {
     z-index: 2;
@@ -109,20 +114,23 @@
     }
   }
 }
-
 .carousel {
   .item {
     margin-left: 29px;
   }
   .carousel-control {
+    width: 30px;
+    height: 30px;
+    font-size: 50px;
+    line-height: 23px;
     margin-top: 0;
   }
   .left {
-    left: -15px;
+    left: 4px;
   }
 
   .right {
-    right: -15px;
+    right: 4px;
   }
 }
 
@@ -199,6 +207,7 @@
 
 #menu {
   height: 100px;
+  margin-top: 160px;
   background-color: #006CC0;
 
   nav {
@@ -351,4 +360,9 @@
       }
     }
   }
+}
+.copyright {
+  float: right;
+  margin-top: 18px;
+  color: gray;
 }

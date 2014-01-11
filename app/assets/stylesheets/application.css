@@ -12,11 +12,11 @@
  *= require bootstrap_and_overrides
  *= require_tree .
  */
-
+body.admin-body {background: none; margin-top: 50px;}
 body {
   padding-top: 10px;
   background: url('/assets/1.jpg');
-  /* background-size: 100%; */
+  background-attachment: fixed;
 }
 
 .basic_image {

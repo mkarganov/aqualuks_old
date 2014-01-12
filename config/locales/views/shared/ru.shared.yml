@@ -2,3 +2,4 @@ ru:
   shared:
     product:
       add_to_cart: Добавить в корзину
+      currency: грн

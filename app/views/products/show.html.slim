@@ -1,5 +1,5 @@
 .row-fluid
-  .span5
+  .span4
     .main-image= image_tag(@product.product_images.first.image_url)
     .row-fluid
       ul.inline#preview
@@ -7,16 +7,17 @@
           li.span2
             =link_to '#', remote: true do
               =image_tag(image.image_url(:thumb))
-  .span7
+  .span8
     h2= @product.name
     .row-fluid
-      .span4#price= number_to_currency(@product.price)
-      .span8#add-to-cart=link_to add_to_cart_product_path(@product), class: 'btn-add btn-5 btn-5a icon-cart', remote: true do
+      .span6#price
+        span= t('.price_title')
+        =price_with_currency(@product.price)
+      .span6#add-to-cart=link_to add_to_cart_product_path(@product), class: 'btn-add btn-5 btn-5a icon-cart', remote: true do
             span= t('.add_to_cart')
-    ul.nav.nav-tabs
-      li.active
-        =link_to t('.description'), '#'
-    p= @product.description.html_safe
+    .description
+      h3 Описание
+      p= @product.description.html_safe
 
 #image-preview-modal.modal.fade tabindex='-1'
   button type="button" class="close" data-dismiss="modal" aria-hidden="true" ×
@@ -25,6 +26,3 @@
       - @product.product_images.each do |image|
         li.slide-glide
           = image_tag(image.image_url)
-/* #add-to-cart=link_to add_to_cart_product_path(@product), class: 'btn-add btn-5 btn-5a icon-cart' do */
-  span= t('.add_to_cart')
-

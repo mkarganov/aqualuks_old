@@ -3,3 +3,4 @@ ru:
     show:
       add_to_cart: Добавить в корзину
       description: Описание
+      price_title: 'Стоимость: '

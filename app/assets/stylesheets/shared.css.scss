@@ -10,12 +10,12 @@
 
   &:hover {
     border: 1px solid #aaa;
-    cursor: pointer;
   }
   .product-image img {
     height: 190px;
     width: 240px;
   }
+  .product-price { margin-top: 7px;}
 }
 // //Styles for product box view
 // //TODO refactor to scss syntax

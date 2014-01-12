@@ -29,7 +29,7 @@ textarea { resize: vertical; }
 
 .main-image img {
   display: block;
-  margin: auto;
+  margin: 10px auto;
   max-height: 300px
 }
 #price {
@@ -76,7 +76,7 @@ textarea { resize: vertical; }
   }
 
   .btn-5 {
-    background: #823aa0;
+    background: #006CC0;
     color: #fff;
     line-height: 29px;
     font-size: 14px;
@@ -87,7 +87,7 @@ textarea { resize: vertical; }
   }
 
   .btn-5:active {
-    background: #9053a9;
+    background: #0464AF;
     top: 2px;
   }
 
@@ -115,7 +115,7 @@ textarea { resize: vertical; }
   }
 
   .btn-5:active:before {
-    color: #703b87;
+    color: #013964;
   }
 
   /* Button 5a */
@@ -139,4 +139,11 @@ textarea { resize: vertical; }
     font-family: 'FontAwesome';
     content: "\f07a";
   }
+}
+.description {
+  margin-right: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 0 10px 10px 10px;
 }

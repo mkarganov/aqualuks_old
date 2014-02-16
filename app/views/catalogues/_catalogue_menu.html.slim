@@ -1,4 +1,4 @@
-.row-fluid
+.row
   .pull-right
     ul.catalogue-menu.nav.nav-pills
       li#filter.dropdown
@@ -21,7 +21,7 @@
           li= sortable 'price', 'asc'
           li= sortable 'price', 'desc'
           li= sortable 'created_at', 'desc'
-      li= form_tag catalogue_path, class: 'form-search', method: :get do
-        .input-append
-          = search_field_tag :search, params[:search], placeholder: 'Search products', class: 'search-query'
-          = submit_tag 'Search', name: nil, class: :btn
+      li= form_tag catalogue_path, class: 'form-inline', method: :get do
+        .form-group
+          = search_field_tag :search, params[:search], placeholder: 'Search products', class: 'form-control'
+        = submit_tag 'Search', name: nil, class: 'btn btn-default'

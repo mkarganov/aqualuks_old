@@ -9,3 +9,6 @@ ru:
       total_price: Общая стоимость
       checkout: Оформить заказ
       empty_cart: Очистить корзину
+    update:
+      order_confirmed: Ваш заказ принят. Менеджер свяжется с Вами в ближайшее время.
+      continue_shopping: Продложить покупки

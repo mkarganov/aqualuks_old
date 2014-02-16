@@ -1,2 +1,2 @@
-h1 Your order has been confirmed. You will be contaced shortly by our manager
-.text-center= link_to 'Continue shopping', catalogue_path, class: 'btn btn-large'
+h1= t('.order_confirmed')
+.text-center= link_to t('.continue_shopping'), catalogue_path, class: 'btn btn-primary btn-lg'

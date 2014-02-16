@@ -1,4 +1,9 @@
 #header {
+  line-height: 20px;
+  *, *:before, *:after { //temporary fix of bootstrap3 box-sizing
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box; }
   width: 1170px;
   height: 170px;
   margin-top: -10px;
@@ -86,8 +91,9 @@
       height: 60px;
       border-right: 1px solid black;
       font-size: 15px;
-      ul { margin-top: 17px; }
+      ul { margin-top: 12px; }
       i {
+        margin-left: 5px;
         font-size: 27px;
         vertical-align: sub;
       }
@@ -114,27 +120,27 @@
     }
   }
 }
-h1.featured {
+h3.featured {
   margin-left: 15px;
-  margin-bottom: -10px;
+  margin-bottom: -15px;
 }
 .carousel {
   .item {
-    margin-left: 29px;
+    margin-left: 44px;
   }
   .carousel-control {
     width: 30px;
     height: 30px;
     font-size: 50px;
     line-height: 23px;
-    margin-top: 0;
+    margin-top: 150px;
   }
   .left {
-    left: 4px;
+    left: 20px;
   }
 
   .right {
-    right: 4px;
+    right: 20px;
   }
 }
 
@@ -149,7 +155,7 @@ h1.featured {
     cursor: pointer;
     padding: 25px 70px;
     display: inline-block;
-    margin: 15px 30px;
+    margin: 5px 30px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
@@ -210,13 +216,13 @@ h1.featured {
 
 
 #menu {
-  height: 100px;
+  height: 75px;
   margin-top: 160px;
   background-color: #006CC0;
 
   nav {
-    ul { ul {display:none;}}
-    padding-top: 10px;
+    ul { ul {display:none; padding: 0;}}
+    padding-top: 5px;
     text-align: center;
     a.menu-item {
       position: relative;
@@ -241,7 +247,7 @@ h1.featured {
   }
   .main-menu a.menu-item {
     margin: 0 20px;
-    padding: 18px 10px;
+    padding: 5px 10px;
   }
 
   .main-menu a.menu-item::before,

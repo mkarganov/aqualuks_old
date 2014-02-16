@@ -5,10 +5,11 @@ Aqualuks::Application.routes.draw do
   resources :users, only: [:update, :edit]
   resource :session
   resource :catalogue, only: [:show]
-  resources :orders do
+  resources :orders, except: [:edit, :index] do
     get 'empty_cart', on: :collection
-    get 'remove', on: :member
+    delete 'remove', on: :member
   end
+  get '/confirm_order' => 'orders#confirm_order'
   resources :products, only: [:show] do
     get 'add_to_cart', on: :member
   end
@@ -19,6 +20,10 @@ Aqualuks::Application.routes.draw do
 
   namespace :admin do
     get :dashboard, to: 'dashboards#index'
+    resources :orders do
+      get 'add_products', on: :member
+      get 'find_products', on: :member
+    end
     resources :products
     resources :categories
   end

@@ -1,0 +1,16 @@
+h1.admin-header= t('.manage_orders')
+table.table.table-bordered.table-stripped.table-hover.table-responsive
+  thead
+    tr
+      td=t('.customer_name')
+      td=t('.phone')
+      td=t('.total')
+      td=t('.status')
+  tbody
+    - @orders.each do |order|
+      tr
+        td= link_to order.id, edit_admin_order_path(order)
+        td= order.customer_name
+        td= order.phone
+        td= order.total
+        td= select_tag 'order', options_for_select(Order::STATUSES, order.status)

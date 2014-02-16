@@ -1,0 +1,8 @@
+- products.each do |product|
+  tr
+    /* td= check_box 'order', 'product_ids', {multiple: true, include_hidden: false}, product.id */
+    td= check_box_tag('order[added_product_ids][]', product.id, false)
+    /* td= check_box_tag('order[product_ids][]', product.id) */
+    td= image_tag product.product_images.first.image_url(:thumb).to_s
+    td= product.name
+    td= product.price

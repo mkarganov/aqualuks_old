@@ -1,13 +1,3 @@
-/* .product */
-/*   =link_to product_path(product) do */
-/*     .product-img= image_tag(product.product_images.first.image_url) */
-/*   .product-actions */
-/*     .info-block */
-/*       .product-title= link_to truncate(product.name, length: 25), product_path(product) */
-/*       .product-description= truncate(product.description, length: 80) */
-/*       .product-price= number_to_currency(product.price) */
-/*       .button-buy= link_to 'Add to Cart', add_to_cart_product_path(product), remote: true */
-
 .product
   =link_to product_path(product) do
     .product-image= image_tag(product.product_images.first.image_url)

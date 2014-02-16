@@ -7,4 +7,4 @@ en:
         category_name: Category Name
       form:
         category_title: Category Title
-        create_category: Create Category
+        # create_category: Create Category

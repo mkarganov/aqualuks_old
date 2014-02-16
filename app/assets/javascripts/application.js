@@ -12,14 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
 //= require turbolinks
+//= require bootstrap
 //= require_tree .
 var calculateTotals;
     calculateTotals = function() {
       var total;
       total = 0;
-      $('.price').each(function(i) {
+      $('.price:visible').each(function(i) {
         return total += parseFloat($(this).text());
       });
       return $("#total-price").text(total.toFixed(2));

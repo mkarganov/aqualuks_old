@@ -1,16 +1,16 @@
 .form=simple_form_for [:admin, @product] do |f|
   .row
-    .span8
+    .col-md-7
       = f.input :name, label: t('.name')
       = f.input :description, label: t('.description'), input_html: { class: 'input-xxlarge'}
       = f.input :price, label: t('.price')
-      ul.unstyled#product_images
+      ul.list-unstyled#product_images
         = render partial: 'image', collection: @product.product_images, locals: { f: f }
       = content_for :product_images do
         = render partial: 'image', locals: { f: f, image: @product.product_images.build }
       #add_image=link_to t('.add_image'), '#'
-    .span4
+    .col-md-4
       = f.association :categories, as: :check_boxes, label: t('.categories'), wrapper_html: { class: 'display-block'}
-  .pull-right= f.button :submit, label: ('.create_product')
+  .pull-right= f.button :submit, ('.create_product'), class: 'btn-default'
 #product_images_form.hide= yield :product_images
 

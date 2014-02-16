@@ -1,4 +1,4 @@
-.row-fluid
+.row.center-products
   - @products.each_slice(4) do |products|
     = render partial: 'shared/product', collection: products
 = paginate @products, remote: true

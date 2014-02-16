@@ -1,0 +1,41 @@
+.container {
+  // min-height: 900px;
+  height: 100%;
+  margin: 0 auto;
+  width: 1170px;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 0px 20px 3px #d3d3d3;
+  padding-right: 0;
+  padding-left: 0;
+}
+.modal-dialog {
+  width: 850px; /* SET THE WIDTH OF THE MODAL */
+  .modal-body{
+    max-height: 500px;
+    overflow-y: auto;
+  }
+  // margin: 0 0 0 -450px; /* CHANGE MARGINS TO ACCOMODATE THE NEW WIDTH (original = margin: -250px 0 0 -280px;) */
+}
+.navbar {
+  margin-bottom: 0px;
+}
+.navbar-fixed-bottom {
+  left: auto;
+  right: auto;
+  width: inherit;
+}
+.carousel-control {
+    width: 30px;
+    height: 30px;
+    font-size: 50px;
+    line-height: 23px;
+    margin-top: 150px;
+
+    .left {
+    left: 20px;
+  }
+
+  .right {
+    right: 20px;
+  }
+}

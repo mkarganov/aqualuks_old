@@ -1,0 +1,29 @@
+h2= t('.edit_order')
+= simple_form_for [:admin, @order] do |f|
+  .row
+    .col-md-5.col-md-offset-1
+      = f.input :customer_name
+      = f.input :address
+      = f.input :phone
+      = f.input :email
+      = f.input :comment
+      = f.input :status
+    .col-md-6
+      .pull-right=link_to t('.add_products'), add_products_admin_order_path(@order), remote: true
+      table
+        tbody
+          - @order.order_products.each do |order_product|
+            tr
+              td= image_tag order_product.product_images.first.image_url(:thumb).to_s
+              td= order_product.name
+              td= f.fields_for :order_products, order_product do |field|
+                = field.hidden_field :product_id
+                = field.hidden_field :_destroy, value: false, class: 'destroy'
+                = field.input :quantity, collection: 1..100, selected: order_product.quantity || 1,
+                              input_html: { data: {price: order_product.price}, class: 'span1'}
+              td.price= price_with_currency(order_product.price*(order_product.quantity||1))
+              td.remove= link_to t('.remove'), "#"
+  hr
+  #total-price.pull-right= price_with_currency(@order.total)
+  = f.hidden_field :total
+  = f.button :submit

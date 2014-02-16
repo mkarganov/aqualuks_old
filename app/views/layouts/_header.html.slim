@@ -6,7 +6,7 @@
       .icon=link_to image_tag('gplus.png'), '#'
       .icon=link_to image_tag('facebook.png'), '#'
     span Профессиональная консультация
-    ul.unstyled
+    ul.list-unstyled
       li +38-0472-56-96-99
       li +38-097-293-54-57
       li
@@ -20,20 +20,20 @@
       span= t('.login_with')
       .login-icon
         a href='/auth/vkontakte/'
-          i class='icon-vk'
+          i class='fa fa-vk'
       .login-icon
         a href='/auth/facebook/'
-          i class='icon-facebook'
+          i class='fa fa-facebook-square'
   #cart
     = content_tag(:div, id: 'full_cart', class: ('show-cart-content' if session[:cart].count > 0)) do
       .items
-        ul.inline
+        ul.list-inline
           li
-            i class='icon-shopping-cart'
+            i class='glyphicon glyphicon-shopping-cart'
           li= t('.in_cart')
           li= session[:cart].count if session[:cart]
       .total
-        span= "#{session[:cart_total]}"
+        span= session[:cart_total]
         = t('.currency')
       .cart-link
         = link_to t('.to_cart'), new_order_path, remote: true
@@ -41,7 +41,7 @@
       = t('.empty_cart')
 #menu
   nav class="main-menu" id="main-menu"
-    ul.inline
+    ul.list-inline
       li
         a.menu-item href="#"
           span Для дома

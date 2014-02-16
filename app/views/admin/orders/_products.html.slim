@@ -1,0 +1,13 @@
+.modal-dialog
+  .modal-content
+    button type="button" class="close" data-dismiss="modal" aria-hidden="true" ×
+    = simple_form_for [:admin, @order] do |f|
+      .modal-body
+        #find_product.pull-right= text_field_tag :search_product
+        table.table
+          tbody
+            = render partial: 'find_products', locals: { products: @products }
+      .modal-footer
+        = f.button :submit
+
+

@@ -17,7 +17,9 @@ gem 'omniauth-identity'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'jquery-rails'
-gem 'twitter-bootstrap-rails'
+# gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass', '~> 3.0.3.0'
+gem "font-awesome-rails"
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'rmagick'

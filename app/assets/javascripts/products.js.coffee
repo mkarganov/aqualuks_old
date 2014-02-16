@@ -8,14 +8,14 @@ $ ->
     $('#product_images').append(a)
     return false
 
-  $(document).on 'click', '#remove', ->
+  $(document).on 'click', '.remove', ->
     row = $(@).parents('li')
-    row.find($('.destroy_field input')).val(true)
+    row.find($('.destroy_field')).val(true)
     row.addClass('hide')
     return false
 
   ready = ->
-    glide = $('#image-preview-modal > .slider').glide({
+    glide = $('#image-preview-modal .slider').glide({
         autoplay: false,
         arrows: true,
         arrowMainClass: 'carousel-control',

@@ -7,7 +7,7 @@ html
     = csrf_meta_tags
   body
     <!-- = render partial: 'layouts/nav_header' -->
-    .container-fluid
+    .container
       = render partial: 'layouts/header'
       - flash.each do |name, msg|
         - if msg.is_a?(String)
@@ -16,18 +16,15 @@ html
               a.close data-dismiss="alert" ×
               = content_tag :div, msg, id: "flash_#{name}"
       = yield
-      .navbar
-        .navbar-inner
-          ul.nav
+      .navbar.navbar-default.navbar-fixed-bottom role="navigation"
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
             li= link_to 'Почему нужно пить здоровую воду?', '#'
             li= link_to 'Как правильно выбрать фильтр?', '#'
             li= link_to 'Качество воды в Украине', '#'
             li= link_to 'Очистка премиум класса', '#'
             li= link_to 'О магазине', '#'
           .copyright= '© АкваЛюкс'
-      <!-- #footer -->
-        <!-- ul -->
-          <!-- li Как выбрать фильтр -->
-  #Modal class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
+  #Modal class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"
     button type="button" class="close" data-dismiss="modal" aria-hidden="true" ×
 

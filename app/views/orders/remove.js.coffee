@@ -8,3 +8,4 @@ else
     counter = parseInt($('#count_cart').text())
     $('#count_cart').text(counter-1 + ' items')
   )
+  $('#full_cart .total span').text(<%=session[:cart_total]%>)

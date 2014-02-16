@@ -12,14 +12,22 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user = current_user if current_user
     @order.save(validate: false)
-    redirect_to edit_order_path(@order)
+    session[:order_id] = @order.id
+    redirect_to confirm_order_path
+    # redirect_to edit_order_path(@order)
+  end
+
+  def confirm_order
+    @order = Order.find(session[:order_id])
   end
 
   def update
-    if @order.update(order_params)
+    if @order.update(order_params) && @order.valid?
       OrderMailer.admin_order_notification.deliver
       # OrderMailer.user_order_notification(@order).deliver
       session[:cart] = []
+      session[:cart_total] = 0
+      session[:order_id] = []
     else
       render :edit
     end
@@ -32,6 +40,7 @@ class OrdersController < ApplicationController
 
   def remove
     @id = params[:id]
+    session[:cart_total] -= params[:price].to_i
     session[:cart].delete(@id)
   end
 

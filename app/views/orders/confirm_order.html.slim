@@ -1,4 +1,4 @@
-.form= simple_form_for @order do |f|
+.order-form= simple_form_for @order, html: {role: 'form'} do |f|
   - if current_user
     =f.input :customer_name, input_html: { value: @order.user.name }
     =f.input :address, input_html: { value: @order.user.address }
@@ -10,5 +10,5 @@
     =f.input :email
     =f.input :phone
   =f.input :comment
-  =f.button :submit
-  =link_to 'Cancel', order_path(@order), method: :delete, class: 'btn'
+  =f.button :submit, class: 'btn-default'
+  =link_to 'Cancel', order_path(@order), method: :delete, class: 'btn default-btn'

@@ -1,0 +1,10 @@
+ru:
+  admin:
+    orders:
+      index:
+        manage_orders: Управлять заказами
+        customer_name: Заказчик
+        phone: Телефон
+        total: Сумма заказа
+        status: Статус
+

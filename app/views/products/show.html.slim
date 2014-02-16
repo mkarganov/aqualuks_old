@@ -1,28 +1,32 @@
-.row-fluid
-  .span4
+.row#content
+  .col-md-4
     .main-image= image_tag(@product.product_images.first.image_url)
-    .row-fluid
-      ul.inline#preview
-        - @product.product_images.each do |image|
-          li.span2
-            =link_to '#', remote: true do
-              =image_tag(image.image_url(:thumb))
-  .span8
+    .row
+      .col-md-offset-1
+        ul.list-inline#preview
+          - @product.product_images.each do |image|
+            li
+              =link_to '#', remote: true do
+                =image_tag(image.image_url(:thumb), class: 'thumb')
+  .col-md-8
     h2= @product.name
-    .row-fluid
-      .span6#price
+    .row
+      .col-md-6#price
         span= t('.price_title')
         =price_with_currency(@product.price)
-      .span6#add-to-cart=link_to add_to_cart_product_path(@product), class: 'btn-add btn-5 btn-5a icon-cart', remote: true do
+      .col-md-6#add-to-cart=link_to add_to_cart_product_path(@product, price: @product.price), class: 'btn-add btn-5 btn-5a icon-cart', remote: true do
             span= t('.add_to_cart')
     .description
       h3 Описание
       p= @product.description.html_safe
 
 #image-preview-modal.modal.fade tabindex='-1'
-  button type="button" class="close" data-dismiss="modal" aria-hidden="true" ×
-  .slider
-    ul.slides.unstyled
-      - @product.product_images.each do |image|
-        li.slide-glide
-          = image_tag(image.image_url)
+  .modal-dialog
+    .modal-content
+      .modal-body
+        button type="button" class="close" data-dismiss="modal" aria-hidden="true" ×
+        .slider
+          ul.slides.list-unstyled
+            - @product.product_images.each do |image|
+              li.slide-glide
+                .normalize-size= image_tag(image.image_url)

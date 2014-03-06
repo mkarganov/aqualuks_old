@@ -7,7 +7,7 @@ h2= t('.edit_order')
       = f.input :phone
       = f.input :email
       = f.input :comment
-      = f.input :status
+      = f.input :status, collection: Order::STATUSES.invert, include_blank: false
     .col-md-6
       .pull-right=link_to t('.add_products'), add_products_admin_order_path(@order), remote: true
       table

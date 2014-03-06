@@ -1,6 +1,10 @@
 class Order < ActiveRecord::Base
 
-  STATUSES = ['pending', 'delivered', 'canceled']
+  STATUSES = {
+              0 => 'pending',
+              1 => 'completed',
+              2 => 'canceled'
+  }
 
   before_create :set_status, :calculate_total
 
@@ -17,10 +21,21 @@ class Order < ActiveRecord::Base
     self.total = self.order_products.map{ |op| op.price * (op.quantity||1)}.inject(:+)
   end
 
+  def status_value
+    case status
+    when 0
+      I18n.t('pending')
+    when 1
+      I18n.t('completed')
+    when 2
+      I18n.t('declined')
+    end
+  end
+
   protected
 
   def set_status
-    self.status = 'pending'
+    self.status = 0
   end
 
   def calculate_total

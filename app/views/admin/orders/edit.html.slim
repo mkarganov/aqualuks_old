@@ -1,5 +1,6 @@
 h2= t('.edit_order')
 = simple_form_for [:admin, @order] do |f|
+  .pull-right=link_to t('.add_products'), add_products_admin_order_path(@order), remote: true
   .row
     .col-md-5.col-md-offset-1
       = f.input :customer_name
@@ -9,7 +10,6 @@ h2= t('.edit_order')
       = f.input :comment
       = f.input :status, collection: Order::STATUSES.invert, include_blank: false
     .col-md-6
-      .pull-right=link_to t('.add_products'), add_products_admin_order_path(@order), remote: true
       table
         tbody
           - @order.order_products.each do |order_product|
@@ -26,4 +26,5 @@ h2= t('.edit_order')
   hr
   #total-price.pull-right= price_with_currency(@order.total)
   = f.hidden_field :total
-  = f.button :submit
+  = f.button :submit, t('.update'), class: 'btn btn-success'
+  = link_to t('.destroy'), admin_order_path(@order), method: :delete, class: 'btn btn-warning', confirm: t('.confirm')

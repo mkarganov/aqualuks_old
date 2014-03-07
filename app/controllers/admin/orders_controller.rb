@@ -2,12 +2,22 @@ class Admin::OrdersController < AdminApplicationController
   before_action :find_order, except: :index
 
   def index
-    @orders = Order.all
+    @orders = Order.page(params[:page]).per(15)
   end
 
   def update
-    @order.update_attributes(order_params)
-    redirect_to edit_admin_order_path(@order)
+    if @order.update_attributes(order_params)
+      flash[:notice] = t('.order_updated')
+      redirect_to admin_orders_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @order.destroy
+    flash[:notice] = t('.order_removed')
+    redirect_to admin_orders_path
   end
 
   def add_products

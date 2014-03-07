@@ -13,3 +13,9 @@ ru:
       save: "Сохранить %{model}"
       new: "Создать %{model}"
       delete: "Удалить %{model}"
+  views:
+    pagination:
+      next: След.
+      last: Посл.
+      first: Первая
+      previous: Пред.

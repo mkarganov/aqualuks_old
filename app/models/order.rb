@@ -1,9 +1,9 @@
 class Order < ActiveRecord::Base
 
   STATUSES = {
-              0 => 'pending',
-              1 => 'completed',
-              2 => 'canceled'
+              0 => I18n.t('shared.order.status.pending'),
+              1 => I18n.t('shared.order.status.completed'),
+              2 => I18n.t('shared.order.status.declined')
   }
 
   before_create :set_status, :calculate_total
@@ -22,14 +22,7 @@ class Order < ActiveRecord::Base
   end
 
   def status_value
-    case status
-    when 0
-      I18n.t('pending')
-    when 1
-      I18n.t('completed')
-    when 2
-      I18n.t('declined')
-    end
+    STATUSES[status]
   end
 
   protected

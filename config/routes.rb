@@ -5,7 +5,7 @@ Aqualuks::Application.routes.draw do
   resources :users, only: [:update, :edit]
   resource :session
   resource :catalogue, only: [:show]
-  resources :orders, except: [:edit, :index] do
+  resources :orders, except: [:edit, :index, :destroy] do
     get 'empty_cart', on: :collection
     delete 'remove', on: :member
   end

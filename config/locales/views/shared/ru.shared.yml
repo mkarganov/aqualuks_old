@@ -3,3 +3,9 @@ ru:
     product:
       add_to_cart: Добавить в корзину
       currency: грн
+    order:
+      status:
+        pending: В ожидании
+        completed: Выполнен
+        declined: Отменен
+

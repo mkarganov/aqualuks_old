@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails', '4.0.2'
+gem 'puma'
+gem 'rails', '4.0.3'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 gem 'slim-rails'
 gem 'simple_form'
 gem 'bcrypt-ruby', '~>3.0.0'
@@ -31,14 +32,10 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
+  gem 'capistrano'
   gem 'mysql2'
   gem 'quiet_assets'
   gem 'pry'
@@ -49,6 +46,4 @@ group :development, :test do
 end
 
 group :production do
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
 end

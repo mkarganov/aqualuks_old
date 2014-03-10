@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'rmagick'
 gem 'carrierwave'
 gem 'kaminari'
+gem 'mysql2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -36,7 +37,6 @@ end
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
   gem 'capistrano'
-  gem 'mysql2'
   gem 'quiet_assets'
   gem 'pry'
   gem 'rspec-rails'

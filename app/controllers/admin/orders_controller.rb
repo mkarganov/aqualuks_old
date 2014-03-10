@@ -7,8 +7,11 @@ class Admin::OrdersController < AdminApplicationController
 
   def update
     if @order.update_attributes(order_params)
-      flash[:notice] = t('.order_updated')
-      redirect_to admin_orders_path
+      if params[:order][:added_product_ids]
+        redirect_to edit_admin_order_path(@order)
+      else
+        redirect_to admin_orders_path
+      end
     else
       render :edit
     end

@@ -27,4 +27,4 @@ h2= t('.edit_order')
   #total-price.pull-right= price_with_currency(@order.total)
   = f.hidden_field :total
   = f.button :submit, t('.update'), class: 'btn btn-success'
-  = link_to t('.destroy'), admin_order_path(@order), method: :delete, class: 'btn btn-warning', confirm: t('.confirm')
+  = link_to t('.destroy'), admin_order_path(@order), method: :delete, class: 'btn btn-warning', data: { confirm: t('.confirm') }

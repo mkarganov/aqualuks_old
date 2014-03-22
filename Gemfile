@@ -38,6 +38,8 @@ end
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
   gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano3-puma'
   gem 'quiet_assets'
   gem 'pry'
   gem 'rspec-rails'

@@ -2,7 +2,7 @@ $ ->
   $('.carousel').carousel( interval: false )
 
   $(document).on 'click', '#menu li', (e)->
-    (e).preventDefault()
+    # (e).preventDefault()
     unless $(e.target).parents('li').find('ul.dropmenu').css('display') == 'block'
       $('.dropmenu').slideUp()
     $(@).find('.dropmenu').slideToggle()

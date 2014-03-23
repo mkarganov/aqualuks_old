@@ -9,6 +9,7 @@ ru:
         price: Цена
         actions: Действия
         add_new_product: Добавить новый продукт
+        featured: Лучший выбор
       new:
         new_product: Новый Продукт
       edit:
@@ -19,6 +20,6 @@ ru:
         price: Цена
         categories: Категории
         add_image: Добавить Изображение
-        create_product: Создать Продукт
+        create_product: Создать/Обновить Продукт
       image:
         image: Изображение

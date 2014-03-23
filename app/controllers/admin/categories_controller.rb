@@ -45,7 +45,7 @@ class Admin::CategoriesController < AdminApplicationController
   end
 
   def available_parrents
-    @categories = Category.parrents
+    @categories = Category.main
   end
 
 end

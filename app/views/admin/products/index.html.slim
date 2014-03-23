@@ -8,7 +8,7 @@ table.table.table-bordered.table-stripped.table-hover.table-responsive
       td=t('.price')
       td=t('.actions')
       td=t('.featured')
-      td=t('.popular')
+      /* td=t('.popular') */
   tbody
     - @products.each do |product|
       tr
@@ -20,7 +20,7 @@ table.table.table-bordered.table-stripped.table-hover.table-responsive
           =link_to "#{t('helpers.links.edit') + ' '}", edit_admin_product_path(product)
           =link_to t('helpers.links.destroy'), admin_product_path(product), method: :delete, data: { confirm: t('helpers.links.confirm')}
         td=check_box_tag("featured_#{product.id}", product.id, product.featured?, class: 'featured')
-        td=check_box_tag("popular_#{product.id}", product.id, product.popular, class: 'popular')
+        /* td=check_box_tag("popular_#{product.id}", product.id, product.popular, class: 'popular') */
 
 =link_to t('.add_new_product'), new_admin_product_path
 = render partial: 'products_marker'

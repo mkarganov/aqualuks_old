@@ -11,6 +11,6 @@
       #add_image=link_to t('.add_image'), '#'
     .col-md-4
       = f.association :categories, as: :check_boxes, label: t('.categories'), wrapper_html: { class: 'display-block'}
-  .pull-right= f.button :submit, ('.create_product'), class: 'btn-default'
+  .pull-right= f.button :submit, t('.create_product'), class: 'btn-default'
 #product_images_form.hide= yield :product_images
 

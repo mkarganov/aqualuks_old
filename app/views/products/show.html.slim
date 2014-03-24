@@ -1,6 +1,6 @@
 .row#content
   .col-md-4
-    .main-image= image_tag(@product.product_images.first.image_url)
+    .main-image= image_tag(@product.product_images.first.image_url(:main_image))
     .row
       .col-md-offset-1
         ul.list-inline#preview

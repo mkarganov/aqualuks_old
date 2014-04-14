@@ -4,6 +4,10 @@ module ProductsHelper
   end
 
   def price_with_currency(price)
-    "#{price} " << t('shared.product.currency')
+    if price == 0
+      "уточняйте"
+    else
+      "#{price} " << t('shared.product.currency')
+    end
   end
 end

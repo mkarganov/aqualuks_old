@@ -8,7 +8,7 @@ $ ->
     $(@).find('.dropmenu').slideToggle()
   $(document).click( (e)->
     if $(e.target).parents('#menu').is($('#menu'))
-      return false
+      # return false
     else
       $('.dropmenu').slideUp()
   )

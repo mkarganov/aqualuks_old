@@ -1,4 +1,4 @@
 .row.center-products
   - @products.each_slice(4) do |products|
     = render partial: 'shared/product', collection: products
-.text-center= paginate @products, remote: true
+.text-center= paginate @products

@@ -20,6 +20,7 @@
       .col-md-6#add-to-cart=link_to add_to_cart_product_path(@product, price: @product.price), class: 'btn-add btn-5 btn-5a icon-cart', remote: true do
             span= t('.add_to_cart')
     .description
+      h3 Производство: #{@product.manufacture}
       h3 Описание
       p= @product.description.html_safe
 

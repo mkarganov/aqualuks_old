@@ -3,6 +3,7 @@
     .col-md-7
       = f.input :name, label: t('.name')
       = f.input :description, label: t('.description'), input_html: { class: 'input-xxlarge'}
+      = f.input :manufacture, label: t('.manufacture'), input_html: { class: 'input-xxlarge'}
       = f.input :price, label: t('.price')
       ul.list-unstyled#product_images
         = render partial: 'image', collection: @product.product_images, locals: { f: f }

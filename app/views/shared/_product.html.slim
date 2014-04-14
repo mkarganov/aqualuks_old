@@ -3,7 +3,7 @@
     - if product.product_images.present?
       .product-image= image_tag(product.product_images.first.image_url)
     - else
-      .product-image= image_tag('/assets/no_img_placeholder.png')
+      .product-image= image_tag('no_img_placeholder.png')
   h4.product-name= link_to truncate(product.name, length: 25), product_path(product)
   p.product-description.pull-left= truncate(product.description.html_safe, length: 80)
   p.product-price.pull-right= price_with_currency(product.price)

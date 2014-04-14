@@ -17,6 +17,7 @@ ru:
       form:
         name: Имя
         description: Описание
+        manufacture: Производство
         price: Цена
         categories: Категории
         add_image: Добавить Изображение

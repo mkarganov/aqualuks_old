@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 
 gem 'puma'
-gem 'rails', '4.0.3'
+gem 'rails', '4.1.6'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails'
@@ -38,10 +38,11 @@ end
 # gem 'debugger', group: [:development, :test]
 group :development, :test do
   gem 'capistrano'
+  gem 'capistrano-rvm'
   gem 'capistrano-rails'
   gem 'capistrano3-puma'
   gem 'quiet_assets'
-  gem 'pry'
+  gem 'jazz_hands', github: 'nixme/jazz_hands', branch: 'bring-your-own-debugger'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'fuubar'

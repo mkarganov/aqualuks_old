@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.fullPage.js
 //= require turbolinks
 //= require bootstrap
 //= require stickUp.min.js

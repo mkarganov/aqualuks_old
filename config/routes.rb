@@ -1,4 +1,5 @@
 Aqualuks::Application.routes.draw do
+  get 'fresh', to: 'welcome#fresh'
   get "welcome/index"
   get 'my_account', to: 'users#edit'
 

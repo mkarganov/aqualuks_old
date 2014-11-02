@@ -13,7 +13,7 @@
 
         <!-- Custom styles for this template -->
         <!-- <link href="js/colorbox/colorbox.css"  rel='stylesheet' type='text/css'> -->
-        <%= stylesheet_link_tag "fresh", media: "all", "data-turbolinks-track" => true %>
+        <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
         <%= javascript_include_tag "application", "data_turbolinks-track" => true %>
         <!-- <%= javascript_include_tag "fresh", "data_turbolinks-track" => true %> -->
 
@@ -86,7 +86,7 @@
                       <div class="item active">
                           <video id='bgvid' autoplay poster=''>
                             <source src=<%= asset_path('Water_Wave_Warp.mp4')%> >
-                            <source src=<%=asset_path('Water_Wave_Warp_720.webm')%> type="video/webm">
+                            <source src=<%= asset_path('Water_Wave_Warp_720.webm')%> type="video/webm">
                           </video>
                           <div class="container">
                               <div class="carousel-caption">

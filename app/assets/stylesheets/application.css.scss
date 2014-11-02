@@ -10,29 +10,30 @@
  *
  *= require font-awesome
  *= require_self
- *= require_tree .
+ *= require fresh
+ *= require_tre .
  */
-@import 'bootstrap';
-html {height: 100%;}
-body.admin-body {background: none; margin-top: 40px;}
-body {
-  height: 100%;
-  padding-top: 10px;
-  background: image_url('1.jpg');
-  background-attachment: fixed;
-}
+// @import 'bootstrap';
+// html {height: 100%;}
+// body.admin-body {background: none; margin-top: 40px;}
+// body {
+//   height: 100%;
+//   padding-top: 10px;
+//   background: image_url('1.jpg');
+//   background-attachment: fixed;
+// }
 
-.basic_image {
-  position: absolute;
-  top: 15%;
-  left: 25%;
-}
-.copyright { padding: 5px; }
-.login-icon {
+// .basic_image {
+//   position: absolute;
+//   top: 15%;
+//   left: 25%;
+// }
+// .copyright { padding: 5px; }
+// .login-icon {
 
 /*   padding: 0; */
 /*   -webkit-transition: all 0.1s linear; */
-}
+// }
 /* .icon-vk { */
 /*   font-size: 18px; */
 /* } */

@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  layout false, only: [:fresh]
+  layout false
 
   def index
     @featured_products = Product.where(featured: true)

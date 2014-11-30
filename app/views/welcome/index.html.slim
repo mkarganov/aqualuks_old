@@ -1,10 +1,341 @@
-h3.featured= t('.featured')
-#featured-carousel.carousel.slide
-  .carousel-inner
-    - @featured_products.each_slice(4).with_index do |products, i|
-      = content_tag(:div, class: i.zero? ? 'item active' : 'item') do
-        = render partial: 'shared/product', collection: products
-  a.carousel-control.left href='#featured-carousel' data-slide='prev' &lsaquo;
-  a.carousel-control.right href='#featured-carousel' data-slide='next' &rsaquo;
-#full-catalog
-  =link_to t('.full_catalogue'), catalogue_path, class: "btn-cat btn-2d"
+doctype html
+html lang='en'
+  head
+    title АкваЛюкс Фильтры для Воды
+    meta name='keywords' content='фильтры, очистка воды, черкассы, промышленная очистка, системы обратного осмоса, консультации, подбор, купить, магазин, здоровье'
+    meta name='description' content='Специализированный магазин очистки воды в Черкассах Консультация по подбору фильтра для воды.'
+    meta charset='UTF-8'
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    /<!--<link rel="shortcut icon" href="PUT YOUR FAVICON HERE">-->
+
+    <!-- Google Web Font Embed -->
+    link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'
+
+    /<!-- Custom styles for this template -->
+    /<!-- <link href="js/colorbox/colorbox.css"  rel='stylesheet' type='text/css'> -->
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag "application", "data_turbolinks-track" => true
+
+    /<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    /!--[if lt IE 9]
+      script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js">
+      script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js">
+
+  body
+
+    /<div class="aqualuks-top-bar_" id="aqualuks-top">
+    /<!--     <div class="container"> -->
+    /<!--         <div class="subheader"> -->
+    /<!--             <div id="phone" class="pull-left"> -->
+    /<!--                 <i class='fa fa-phone' alt="phone"/></i> -->
+    /<!--                     +38-0472-56-96-99 -->
+    /<!--             </div> -->
+    /<!--             <div id="email" class="pull-right"> -->
+    /<!--                 <i class='fa fa-envelope' alt="phone"/></i> -->
+    /<!--                     aqualuks.filters@gmail.com -->
+    /<!--             </div> -->
+    /<!--         </div> -->
+    /<!--     </div> -->
+    /</div>
+    .aqualuks-top-menu
+      .container
+        /<!-- Static navbar -->
+        .navbar.navbar-default role="navigation"
+          .container
+            .navbar-header
+              button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-collapse"
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+              a.navbar-brand href="#"
+                =image_tag asset_path('logo.png'), {alt: "Urbanic free HTML5 template", title: "Urbanic HTML5 Template"}
+            .navbar-collapse.collapse#aqualuks-nav-bar
+              ul.nav.navbar-nav.navbar-right style="margin-top: 40px;"
+                li.active
+                  =link_to 'ГЛАВНАЯ', '#aqualuks-top'
+                li
+                  =link_to 'О НАС', '#aqualuks-about'
+                /<!-- <li><a href="#aqualuks-portfolio">PORTFOLIO</a></li> -->
+                li
+                  =link_to 'СТАТЬИ', '#aqualuks-blog'
+                /<!-- <li><a rel="nofollow" href="http://www.google.com" class="external-link">EXTERNAL</a></li> -->
+                li
+                  =link_to 'СВЯЗАТЬСЯ С НАМИ', '#aqualuks-contact'
+
+    .home#aqualuks-top
+      #aqualuks-carousel.carousel.slide data-ride="carousel"
+        /<!-- Indicators -->
+        /<!-- <ol class="carousel-indicators"> -->
+        /<!--     <li data-target="#aqualuks-carousel" data-slide-to="0" class="active"></li> -->
+        /<!--     <li data-target="#aqualuks-carousel" data-slide-to="1"></li> -->
+        /<!--     <li data-target="#aqualuks-carousel" data-slide-to="2"></li> -->
+        /<!-- </ol> -->
+        .carousel-inner
+          .item.active
+            video#bgvid{autoplay poster=''}
+              source src="#{asset_path('Water_Wave_Warp.mp4')}"
+              source src="#{asset_path('Water_Wave_Warp_720.webm')}" type='video/webm'
+            .container
+              .carousel-caption#home-title
+                h1 АкваЛюкс
+                p ЗДОРОВЬЕ И ЧИСТОТА
+                /  <!-- <p><a class="btn btn-lg btn-green" href="#" role="button" style="margin: 20px;">View Demo</a> -->
+                /  <!-- <a class="btn btn-lg btn-orange" href="#" role="button">Free Download</a></p> -->
+
+      /<!-- <a class="left carousel-control" href="#aqualuks-carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> -->
+      /<!-- <a class="right carousel-control" href="#aqualuks-carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a> -->
+      /<!-- <div class="aqualuks-welcome" id="aqualuks-welcome"> -->
+      /<!--     <div class="container"> -->
+      /<!--         <div class="aqualuks-slogan text-center"> -->
+      /<!--             <span class="txt_darkgrey">АкваЛюкс </span> -->
+      /<!--             <1!-- <span class="txt_orange">Urbanic Design</span> --1> -->
+      /<!--             <p class="txt_slogan"><i>чистота и здоровье</i></p> -->
+      /<!--         </div> -->
+      /<!--     </div> -->
+      /<!-- </div> -->
+
+    .aqualuks-service#aqualuks-service
+      .container
+        .row
+          .col-md-4
+            .aqualuks-service-item
+              div
+                /* =image_tag 'Water-256.png', alt: 'icon' */
+                span.aqualuks-service-item-header Подбор фильтра
+              p
+                | Наш магазин предоставляет профессиональную консультацию по подбору фильтра для воды любого типа и сложности. Мы расскажем Вам плюсы и минусы каждого, а так же поможем сделать наиболее подходящий выбор, учитывая особенности Вашей семьи. Так же, если Вы заинтересованы в более масштабной очистке воды, у нас Вы сможете подобрать промышленную систему для обслуживания многоэтажного дома или жилого комплекса.
+              /* .text-center */
+                = link_to 'READ MORE', '#', {class: 'aqualuks-btn-read-more btn btn-orange'}
+                br.clearfix
+              .clearfix
+
+          .col-md-4
+            .aqualuks-service-item
+              div
+                /* =image_tag 'battery.png', alt: 'icon' */
+                span.aqualuks-service-item-header Ассортимент
+              p
+                | Ассортимент постоянно растет. У нас Вы найдете практически все, что связанно с водой, от простых фильтров кувшинного типа, смесителей, радиаторов, котлов, заканчивая средствами для очистки бассейнов, кулерами и системами премиум класса.
+              /* .text-center */
+                = link_to 'READ MORE', '#', {class: 'aqualuks-btn-read-more btn btn-orange'}
+                br.clearfix
+              .clearfix
+
+          .col-md-4
+            .aqualuks-service-item
+              div
+                /* =image_tag 'mobile.png', alt: 'icon' */
+                span.aqualuks-service-item-header Сервис
+              p
+                | Мы предоставляем полный набор услуг по установке и обслуживанию систем очистки воды. Мы заботимся о каждом нашем клиенте и обязательно напомним, когда подошло время обслуживания Вашего фильтра!
+              /* .text-center */
+                = link_to 'READ MORE', '#', {class: 'aqualuks-btn-read-more btn btn-orange'}
+                br.clearfix
+              .clearfix
+
+    .aqualuks-team#aqualuks-about
+      div.container
+        .row
+          .aqualuks-line-header
+            .text-center
+              hr.team_hr.team_hr_left
+                span НЕ МНОГО О СЕБЕ
+              hr.team_hr.team_hr_right
+        .clearfix
+          ul.row.row_team
+            li.col-lg-3.col-md-3.col-sm-6
+              .text-center
+                /<div class="member-thumb">
+                    <img src="images/member1.jpg" class="img-responsive" alt="member 1" />
+                    <!-- <div class="thumb-overlay"> -->
+                    <!--     <a href="#"><span class="social-icon-fb"></span></a> -->
+                    <!--     <a href="#"><span class="social-icon-twitter"></span></a> -->
+                    <!--     <a href="#"><span class="social-icon-linkedin"></span></a> -->
+                    <!-- </div> -->
+                /</div>
+                .team-inner
+                  p.team-inner-header Борис
+                  p.team-inner-subtext Директор
+            li.col-md-9.col-sm-6
+              div
+                h4 Здравствуйте! Меня зовут Борис и я основатель магазина «АкваЛюкс». В сфере, связанной с водой, я более 17-ти лет. На протяжении этого времени мне довелось изучить многие особенности работы с водой от правильного проведения водопровода в доме/квартире до влияния воды на здоровье человека. Так же я узнал о качестве воды, которая течет из нашего с Вами крана и в окресных селах/городах. В наше время этот вопрос стоит как никогда актуально. Поэтому я решил создать место, где каждый человек может получить профессиональный совет, консультацию о фильтрах для воды, как самых простых, так и самых сложных систем водоочистки. И у нас это успешно получается уже более 4-х лет. Я готов помочь и поделиться своим опытом с Вами.
+
+    #aqualuks-blog
+      .container
+        .row
+          .aqualuks-line-header{style="margin-top: 0px;"}
+            .text-center
+              hr.team_hr.team_hr_left.hr_gray
+                span.span_blog.txt_darkgrey СТАТЬИ
+                hr.team_hr.team_hr_right.hr_gray
+          br.clearfix
+
+        .blog_box
+          .col-sm-5.col-md-6.blog_post
+            ul.list-inline
+              li.col-md-4
+                /* =link_to image_tag('blog-image-1.jpg', alt: 'some'), '#' */
+              li.col-md-8
+                .pull-left
+                  span.blog_header Виды фильтров, за и против
+                  /<!-- <span>Posted by : <a class="link_orange" href="#"><span class="txt_orange">Tracy</span></a></span> -->
+                .pull-right
+                  =link_to 'Читать >', '#', {class: 'btn btn-orange', role: 'button'}
+                   /<a class="btn btn-orange" href="#" role="button">Читать полностью</a>
+                .clearfix
+                p.blog_text
+                  | В этой статье Вы узнаете об основных типах фильтров использующихся на сегодняшний день в бытовых условиях
+
+          .col-sm-5.col-md-6.blog_post
+            ul.list-inline
+              li.col-md-4
+                /* =link_to image_tag('blog-image-2.jpg', alt: 'some'), '#' */
+              li.col-md-8
+                .pull-left
+                  span.blog_header Как выбрать фильтр?
+                  /<!-- <span>Posted by : <a class="link_orange" href="#"><span class="txt_orange">Tracy</span></a></span> -->
+                .pull-right
+                  =link_to 'Читать >', '#', {class: 'btn btn-orange', role: 'button'}
+                   /<a class="btn btn-orange" href="#" role="button">Читать полностью</a>
+                .clearfix
+                p.blog_text
+                  | Несколько простых советов по выбору системы очистки воды
+
+          .col-sm-5.col-md-6.blog_post
+            ul.list-inline
+              li.col-md-4
+                /* =link_to image_tag('blog-image-3.jpg', alt: 'some'), '#' */
+              li.col-md-8
+                .pull-left
+                  span.blog_header Хлор в воде
+                  /<!-- <span>Posted by : <a class="link_orange" href="#"><span class="txt_orange">Tracy</span></a></span> -->
+                .pull-right
+                  =link_to 'Читать >', '#', {class: 'btn btn-orange', role: 'button'}
+                   /<a class="btn btn-orange" href="#" role="button">Читать полностью</a>
+                .clearfix
+                p.blog_text
+                  | Все мы знаем что в большинстве наших городов воду дезинфицируют хлорированием. Что же это означает на самом деле?
+
+          .col-sm-5.col-md-6.blog_post
+            ul.list-inline
+              li.col-md-4
+                /* =link_to image_tag('blog-image-4.jpg', alt: 'some'), '#' */
+              li.col-md-8
+                .pull-left
+                  span.blog_header Типы очистки воды
+                  /<!-- <span>Posted by : <a class="link_orange" href="#"><span class="txt_orange">Tracy</span></a></span> -->
+                .pull-right
+                  =link_to 'Читать >', '#', {class: 'btn btn-orange', role: 'button'}
+                   /<a class="btn btn-orange" href="#" role="button">Читать полностью</a>
+                .clearfix
+                p.blog_text
+                  | Есть несколько основных типов очистки воды. О них и пойдет речь в данном материале.
+
+
+    #aqualuks-contact
+      .container
+        .row
+          .aqualuks-line-header.head_contact
+            .text-center
+              hr.team_hr.team_hr_left.hr_gray
+                span.txt_darkgrey СВЯЗАТЬСЯ С НАМИ
+              hr.team_hr.team_hr_right.hr_gray
+
+          .col-md-8
+            .aqualuks-contact-map#map-canvas
+            .clearfix
+          div.col-md-4.contact_right
+            p Вы всегда можете связаться с нами одним из следующих способов
+            p
+              i.fa.fa-map-marker
+              | бул. Шевченка, 352 Черкаси, Украина 18000
+            p
+              i.fa.fa-phone
+              | +38-0472-56-96-99
+            p
+              i.fa.fa-phone
+              | +38-097-293-54-57
+            p
+              i{class='fa fa-envelope' alt="phone"}
+              | aqualuks.filters@gmail.com
+              /<!-- <p><img src="images/globe.png" alt="icon 3" /><a class="link_orange" href="#"><span class="txt_orange">www.company.com</span></a></p> -->
+            /* form.form-horizontal{action="#"} */
+              .form-group
+                input{type="email" class="form-control" placeholder="Ваше Имя..." maxlength="40"}
+              .form-group
+                input{type="email" class="form-control" placeholder="Ваш Email..." maxlength="40"}
+              .form-group
+                textarea.form-control{style="height: 130px;" placeholder="Введите Ваше сообщение"}
+              button.btn.btn-orange.pull-right{type='submit'} Отправить
+
+
+    .aqualuks-tweets
+      .container
+        .row{style="margin-top:20px;"}
+          .col-md-2
+          .col-md-1
+            =image_tag 'quote.png', alt: 'icon'
+          .col-md-7.tweet_txt
+            span Мы познаём ценность воды лишь когда колодец пересыхает.
+            br
+            span.twitter_user Benjamin Franklin
+          .col-md-2
+
+    .aqualuks-partners
+      .container
+        .row
+          .aqualuks-line-header
+            .text-center
+              hr.team_hr.team_hr_left.hr_gray
+                span.txt_darkgrey НАШИ ПАРТНЕРЫ
+              hr.team_hr.team_hr_right.hr_gray
+          .clearfix
+          div.text-center
+            .row
+              .col-xs-3
+                =image_tag('aquafilter_200.jpg', class: 'img-responsive', alt: 'Aquafulter')
+              .col-xs-3
+                =image_tag('blue_logo(1)_200.jpg', class: 'img-responsive', alt: 'Bluefilters')
+              .col-xs-3
+                =image_tag('atoll_logo.jpg', class: 'img-responsive', alt: 'Atoll')
+              .col-xs-3
+                =image_tag('ecosoft_logo.png', class: 'img-responsive', alt: 'Ecosoft')
+            /* div{style="margin-top:60px;"} */
+              ul.list-inline
+                li.col-sm-2.col-md-2.aqualuks-partner-item
+                  =link_to image_tag('aquafilter.jpg', class: 'img-responsive', alt: 'Aquafulter'), '#'
+                li.col-sm-2.col-md-2.aqualuks-partner-item
+                  =link_to image_tag('blue_filter_logo.jpeg', class: 'img-responsive', alt: 'Bluefilters'), '#'
+                li.col-sm-2.col-md-2.aqualuks-partner-item
+                  =link_to image_tag('atoll_logo.jpg', class: 'img-responsive', alt: 'Atoll'), '#'
+                li.col-sm-2.col-md-2.aqualuks-partner-item
+                  =link_to image_tag('ecosoft_logo.png', class: 'img-responsive', alt: 'Ecosoft'), '#'
+
+    .aqualuks-footer
+      .container
+        .row
+          .text-center
+            .footer_container
+              ul.list-inline
+                li
+                  a{href="https://plus.google.com/+AqualuksUa"}
+                    span.social-icon-fb
+                      i.fa.fa-google-plus.fa-2x
+                li
+                  a{href="https://vk.com/aqualuks"}
+                    span.social-icon-rss
+                      i.fa.fa-2x.fa-vk
+              .height30
+              a.btn.btn-lg.btn-orange#btn-back-to-top{href="#" role="button"} Наверх
+              .height30
+            .footer_bottom_content
+              | Copyright © 2014 Aqualuks
+              /<!-- - Design: <a href="http://www.aqualuks.com">aqualuks</a> -->
+/
+/        <!-- <script src="js/jquery.min.js" type="text/javascript"></script> -->
+/        <!-- <script src="js/bootstrap.min.js"  type="text/javascript"></script> -->
+/        <!-- <script src="js/stickUp.min.js"  type="text/javascript"></script> -->
+/        <!-- <script src="js/colorbox/jquery.colorbox-min.js"  type="text/javascript"></script> -->
+/        <!-- <script src="js/aqualuks_script.js"  type="text/javascript"></script> -->
+

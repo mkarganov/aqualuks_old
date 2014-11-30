@@ -1,33 +1,33 @@
 Aqualuks::Application.routes.draw do
-  get 'fresh', to: 'welcome#fresh'
+  # get 'fresh', to: 'welcome#fresh'
   get "welcome/index"
-  get 'my_account', to: 'users#edit'
+  # get 'my_account', to: 'users#edit'
 
-  resources :users, only: [:update, :edit]
-  resource :session
-  resource :catalogue, only: [:show]
-  resources :orders, except: [:edit, :index, :destroy] do
-    get 'empty_cart', on: :collection
-    delete 'remove', on: :member
-  end
-  get '/confirm_order' => 'orders#confirm_order'
-  resources :products, only: [:show] do
-    get 'add_to_cart', on: :member
-  end
-
-  get '/login' => 'sessions#new'
-  match '/auth/:provider/callback' => 'sessions#create', via: [:get, :post]
-  get '/auth/failure' => 'sessions#failure'
-
-  namespace :admin do
-    get :dashboard, to: 'dashboards#index'
-    resources :orders do
-      get 'add_products', on: :member
-      get 'find_products', on: :member
-    end
-    resources :products
-    resources :categories
-  end
+  # resources :users, only: [:update, :edit]
+  # resource :session
+  # resource :catalogue, only: [:show]
+  # resources :orders, except: [:edit, :index, :destroy] do
+  #   get 'empty_cart', on: :collection
+  #   delete 'remove', on: :member
+  # end
+  # get '/confirm_order' => 'orders#confirm_order'
+  # resources :products, only: [:show] do
+  #   get 'add_to_cart', on: :member
+  # end
+  #
+  # get '/login' => 'sessions#new'
+  # match '/auth/:provider/callback' => 'sessions#create', via: [:get, :post]
+  # get '/auth/failure' => 'sessions#failure'
+  #
+  # namespace :admin do
+  #   get :dashboard, to: 'dashboards#index'
+  #   resources :orders do
+  #     get 'add_products', on: :member
+  #     get 'find_products', on: :member
+  #   end
+  #   resources :products
+  #   resources :categories
+  # end
 
   root 'welcome#index'
 

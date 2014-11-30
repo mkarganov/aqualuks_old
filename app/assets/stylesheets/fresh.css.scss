@@ -34,6 +34,8 @@ h1, h2, h3, h4, h5, h6, span, p { font-family: 'Open Sans', Arial, Helvetice Neu
     background-color:#ffffff;
 }
 
+#home-title { display: none; }
+
 video#bgvid {
   // position: absolute;
   right: 0;
@@ -57,6 +59,7 @@ video#bgvid {
     background-color:#ffffff;
     z-index: 5000;
     width:100%;
+    box-shadow: -1.25rem 0 0 0 #fcc001, 0 -0.3125rem 0.625rem 0.3125rem black;
     .navbar-brand img {
       width: 225px;
       margin-top: -15px;
@@ -122,8 +125,8 @@ video#bgvid {
 
 @media (max-width: 768px) {
     #aqualuks-carousel {
-      height: 345px;
-      .item {height: 345px;}
+      height: 295px;
+      .item {height: 295px;}
       .carousel-caption {
         padding-bottom: 120px;
       }
@@ -178,7 +181,7 @@ video#bgvid {
 
 .aqualuks-service {
     margin-bottom: 100px;
-    margin-top: 100px;
+    margin-top: 30px;
 }
 
 .aqualuks-service-item {
@@ -193,7 +196,7 @@ video#bgvid {
     text-align: justify;
     margin-top: 25px;
     font-size: 14px;
-    color: #929292;
+    color: #343434;
 }
 
 .subheader {
